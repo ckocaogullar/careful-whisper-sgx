@@ -1,0 +1,3313 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Jul 22 13:23:01 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 227)
+ETAGS = etags
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 229)
+CSCOPE = cscope
+# makefile (from 'Makefile', line 425)
+sp_SOURCES = sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c $(common) $(am__append_1)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 203)
+am__recursive_targets = $(RECURSIVE_TARGETS) $(RECURSIVE_CLEAN_TARGETS) $(am__extra_recursive_targets)
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 88)
+POST_UNINSTALL = :
+# makefile (from 'Makefile', line 415)
+common = byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c
+# makefile (from 'Makefile', line 293)
+CURL_LIBS = -lcurl
+# makefile (from 'Makefile', line 396)
+sysconfdir = ${prefix}/etc
+# environment
+XDG_SESSION_TYPE = x11
+# makefile (from 'Makefile', line 112)
+nodist_client_OBJECTS = Enclave_u.$(OBJEXT)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 289)
+CPPFLAGS = 
+# makefile (from 'Makefile', line 272)
+DIST_TARGETS = dist-gzip
+# makefile (from 'Makefile', line 307)
+INSTALL = /usr/bin/install -c
+# makefile (from 'Makefile', line 129)
+sp_OBJECTS = $(am_sp_OBJECTS)
+# makefile (from 'Makefile', line 411)
+AM_CXXFLAGS = -std=c++11 
+# makefile (from 'Makefile', line 334)
+SGXSDK_BINDIR = /home/cerkoc01/Workspace/sgxsdk/bin/x64
+# makefile (from 'Makefile', line 298)
+DEFS = -DHAVE_CONFIG_H
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/54759/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 115)
+client_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(client_LDFLAGS) $(LDFLAGS) -o $@
+# makefile (from 'Makefile', line 352)
+SHELL = /bin/bash
+# environment
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+ 
+# makefile (from 'Makefile', line 370)
+datarootdir = ${prefix}/share
+# environment
+JOURNAL_STREAM = 8:77489
+# makefile (from 'Makefile', line 287)
+CFLAGS = -g -O2
+# makefile (from 'Makefile', line 83)
+NORMAL_INSTALL = :
+# makefile (from 'Makefile', line 123)
+am__sp_SOURCES_DIST = sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp
+# makefile (from 'Makefile', line 137)
+AM_V_GEN = $(am__v_GEN_$(V))
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 235)
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+# makefile (from 'Makefile', line 388)
+pdfdir = ${docdir}
+# makefile (from 'Makefile', line 430)
+mrsigner_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib
+# makefile (from 'Makefile', line 134)
+am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 138)
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 310)
+INSTALL_SCRIPT = ${INSTALL}
+# makefile (from '.deps/sp.Po', line 1)
+MAKEFILE_LIST :=  Makefile .deps/Enclave_u.Po .deps/agent_curl.Po .deps/agent_wget.Po .deps/base64.Po .deps/byteorder.Po .deps/client.Po .deps/common.Po .deps/crypto.Po .deps/enclave_verify.Po .deps/fileio.Po .deps/hexutil.Po .deps/iasrequest.Po .deps/logfile.Po .deps/mrsigner.Po .deps/msgio.Po .deps/quote_size.Po .deps/sgx_detect_linux.Po .deps/sgx_stub.Po .deps/sp.Po
+# makefile (from 'Makefile', line 245)
+am__relativize = dir0=`pwd`; sed_first='s,^\([^/]*\)/.*$$,\1,'; sed_rest='s,^[^/]*/*,,'; sed_last='s,^.*/\([^/]*\)$$,\1,'; sed_butlast='s,/*[^/]*$$,,'; while test -n "$$dir1"; do first=`echo "$$dir1" | sed -e "$$sed_first"`; if test "$$first" != "."; then if test "$$first" = ".."; then dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; else first2=`echo "$$dir2" | sed -e "$$sed_first"`; if test "$$first2" = "$$first"; then dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; else dir2="../$$dir2"; fi; dir0="$$dir0"/"$$first"; fi; fi; dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; done; reldir="$$dir2"
+# automatic
+@F = $(notdir $@)
+# makefile (from 'Makefile', line 339)
+SGXSSL_LIBDIR = /opt/intel/sgxssl/lib64
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+USERNAME = cerkoc01
+# makefile (from 'Makefile', line 184)
+SOURCES = $(client_SOURCES) $(nodist_client_SOURCES) $(mrsigner_SOURCES) $(sp_SOURCES)
+# makefile (from 'Makefile', line 296)
+CXXFLAGS = -g -O2
+# makefile (from 'Makefile', line 74)
+pkgincludedir = $(includedir)/sgxautosample
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# makefile (from 'Makefile', line 79)
+install_sh_PROGRAM = $(install_sh) -c
+# makefile (from 'Makefile', line 135)
+am__v_P_0 = false
+# makefile (from 'Makefile', line 139)
+am__v_GEN_0 = @echo "  GEN     " $@;
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/54759/bus
+# makefile (from 'Makefile', line 354)
+VERSION = 1.0
+# makefile (from 'Makefile', line 363)
+am__quote = 
+# makefile (from 'Makefile', line 131)
+sp_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(sp_LDFLAGS) $(LDFLAGS) -o $@
+# makefile (from 'Makefile', line 321)
+OPENSSL_LDFLAGS = -L/usr/lib/ssl/lib
+# makefile (from 'Makefile', line 333)
+SGXSDK = /home/cerkoc01/Workspace/sgxsdk
+# makefile (from 'Makefile', line 103)
+CONFIG_CLEAN_FILES = mrsigner.sh run-server run-client
+# environment
+_ = /usr/bin/code
+# makefile (from 'Makefile', line 286)
+CCDEPMODE = depmode=gcc3
+# makefile (from 'Makefile', line 99)
+am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log configure.lineno config.status.lineno
+# makefile (from 'Makefile', line 391)
+psdir = ${docdir}
+# makefile (from 'Makefile', line 375)
+have_xxd = /usr/bin/xxd
+# makefile (from 'Makefile', line 284)
+AWK = gawk
+# makefile (from 'Makefile', line 364)
+am__tar = $${TAR-tar} chof - "$$tardir"
+# environment
+MANAGERPID = 2525
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# makefile (from 'Makefile', line 290)
+CURL_CPPFLAGS = 
+# makefile (from 'Makefile', line 29)
+am__make_running_with_option = case $${target_option-} in ?) ;; *) echo "am__make_running_with_option: internal error: invalid" "target option '$${target_option-}' specified" >&2; exit 1;; esac; has_opt=no; sane_makeflags=$$MAKEFLAGS; if $(am__is_gnu_make); then sane_makeflags=$$MFLAGS; else case $$MAKEFLAGS in *\\[\ \	]*) bs=\\; sane_makeflags=`printf '%s\n' "$$MAKEFLAGS" | sed "s/$$bs$$bs[$$bs $$bs	]*//g"`;; esac; fi; skip_next=no; strip_trailopt () { flg=`printf '%s\n' "$$flg" | sed "s/$$1.*$$//"`; }; for flg in $$sane_makeflags; do test $$skip_next = yes && { skip_next=no; continue; }; case $$flg in *=*|--*) continue;; -*I) strip_trailopt 'I'; skip_next=yes;; -*I?*) strip_trailopt 'I';; -*O) strip_trailopt 'O'; skip_next=yes;; -*O?*) strip_trailopt 'O';; -*l) strip_trailopt 'l'; skip_next=yes;; -*l?*) strip_trailopt 'l';; -[dEDm]) skip_next=yes;; -[JT]) skip_next=yes;; esac; case $$flg in *$$target_option*) has_opt=yes; break;; esac; done; test $$has_opt = yes
+# environment
+VSCODE_CWD = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 270)
+DIST_ARCHIVES = $(distdir).tar.gz
+# makefile (from 'Makefile', line 332)
+SET_MAKE = 
+# makefile (from 'Makefile', line 78)
+install_sh_DATA = $(install_sh) -c -m 644
+# environment
+SGX_SDK = /home/cerkoc01/Workspace/sgxsdk
+# makefile (from 'Makefile', line 434)
+mrsigner_LDADD = -lcrypto
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_54759_IkpitR
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/cerkoc01/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/cerkoc01/Workspace/sgxsdk/bin:/home/cerkoc01/Workspace/sgxsdk/bin/x64:/home/cerkoc01/Workspace/sgxsdk/bin:/home/cerkoc01/Workspace/sgxsdk/bin/x64
+# makefile (from 'Makefile', line 313)
+LIBOBJS = 
+# makefile (from 'Makefile', line 222)
+am__define_uniq_tagged_files = list='$(am__tagged_files)'; unique=`for i in $$list; do if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; done | $(am__uniquify_input)`
+# makefile (from 'Makefile', line 400)
+top_srcdir = .
+# makefile (from 'Makefile', line 82)
+transform = $(program_transform_name)
+# makefile (from 'Makefile', line 136)
+am__v_P_1 = :
+# makefile (from 'Makefile', line 140)
+am__v_GEN_1 = 
+# makefile (from 'Makefile', line 329)
+PACKAGE_VERSION = 1.0
+# makefile (from 'Makefile', line 350)
+SGX_TSERVICE_LIB = sgx_tservice
+# makefile (from 'Makefile', line 161)
+AM_V_CC = $(am__v_CC_$(V))
+# environment
+GPG_AGENT_INFO = /run/user/54759/gnupg/S.gpg-agent:0:1
+# makefile (from 'Makefile', line 383)
+localedir = ${datarootdir}/locale
+# makefile (from 'Makefile', line 309)
+INSTALL_PROGRAM = ${INSTALL}
+# environment
+SESSION_MANAGER = local/e127133:@/tmp/.ICE-unix/2757,unix/e127133:/tmp/.ICE-unix/2757
+# makefile (from 'Makefile', line 341)
+SGX_ENCLAVE_CFLAGS = -nostdinc -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector
+# makefile (from 'Makefile', line 315)
+LIBS_HW_SIMU = 
+# environment
+XDG_RUNTIME_DIR = /run/user/54759
+# makefile (from 'Makefile', line 386)
+mkdir_p = $(MKDIR_P)
+# makefile (from 'Makefile', line 378)
+includedir = ${prefix}/include
+# makefile (from 'Makefile', line 18)
+am__is_gnu_make = { if test -z '$(MAKELEVEL)'; then false; elif test -n '$(MAKE_HOST)'; then true; elif test -n '$(MAKE_VERSION)' && test -n '$(CURDIR)'; then true; else false; fi; }
+# makefile (from 'Makefile', line 356)
+abs_srcdir = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 162)
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 390)
+program_transform_name = s,x,x,
+# makefile (from 'Makefile', line 311)
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+# makefile (from 'Makefile', line 120)
+mrsigner_DEPENDENCIES = 
+# makefile (from 'Makefile', line 77)
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+# makefile (from 'Makefile', line 106)
+PROGRAMS = $(bin_PROGRAMS)
+# makefile (from 'Makefile', line 146)
+depcomp = $(SHELL) $(top_srcdir)/depcomp
+# makefile (from 'Makefile', line 231)
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in $(srcdir)/mrsigner.sh.in $(srcdir)/run.in $(top_srcdir)/build-aux/sgx_app.am compile depcomp install-sh missing
+# makefile (from 'Makefile', line 283)
+AUTOMAKE = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing automake-1.16
+# makefile (from 'Makefile', line 273)
+distuninstallcheck_listfiles = find . -type f -print
+# makefile (from 'Makefile', line 319)
+OBJEXT = o
+# makefile (from 'Makefile', line 393)
+sbindir = ${exec_prefix}/sbin
+# makefile (from 'Makefile', line 277)
+ACLOCAL = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing aclocal-1.16
+# makefile (from 'Makefile', line 397)
+target_alias = 
+# makefile (from 'Makefile', line 368)
+builddir = .
+# environment
+XDG_MENU_PREFIX = gnome-
+# makefile (from 'Makefile', line 424)
+client_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib
+# makefile (from 'Makefile', line 326)
+PACKAGE_STRING = sgxautosample 1.0
+# makefile (from 'Makefile', line 163)
+am__v_CC_0 = @echo "  CC      " $@;
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = c1b6d256d0e741fbb21764dc751be6ad
+# makefile (from 'Makefile', line 312)
+LDFLAGS = 
+# makefile (from 'Makefile', line 145)
+DEFAULT_INCLUDES = -I.
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 201)
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive
+# makefile (from 'Makefile', line 301)
+ECHO_N = -n
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/54759/keyring/ssh
+# makefile (from 'Makefile', line 104)
+CONFIG_CLEAN_VPATH_FILES = 
+# makefile (from 'Makefile', line 412)
+CLEANFILES = Enclave_u.c Enclave_u.h Enclave.edl Enclave.signed.so policy enclave_sigstruct_raw 
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 300)
+ECHO_C = 
+# makefile (from 'Makefile', line 274)
+am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
+# environment
+DISPLAY = :0
+# makefile (from 'Makefile', line 387)
+oldincludedir = /usr/include
+# makefile (from 'Makefile', line 342)
+SGX_ENCLAVE_CPPFLAGS = -I$(SGXSDK_INCDIR) -I$(SGXSDK_INCDIR)/tlibc
+# makefile (from 'Makefile', line 374)
+exec_prefix = ${prefix}
+# makefile (from 'Makefile', line 89)
+bin_PROGRAMS = client$(EXEEXT) sp$(EXEEXT) mrsigner$(EXEEXT)
+# makefile (from 'Makefile', line 93)
+am__aclocal_m4_deps = $(top_srcdir)/m4/sgx_init.m4 $(top_srcdir)/configure.ac
+# makefile (from 'Makefile', line 91)
+subdir = .
+# makefile (from 'Makefile', line 365)
+am__untar = $${TAR-tar} xf -
+# makefile (from 'Makefile', line 304)
+ENCLAVE_SIGN_TARGET = signed_enclave_dev
+# makefile (from 'Makefile', line 126)
+am__objects_2 = agent_curl.$(OBJEXT)
+# makefile (from 'Makefile', line 389)
+prefix = /usr/local
+# makefile (from 'Makefile', line 372)
+dvidir = ${docdir}
+# makefile (from 'Makefile', line 403)
+SGXSSL_BINDIR = @SGXSSL_BINDIR@
+# environment
+PWD = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 80)
+install_sh_SCRIPT = $(install_sh) -c
+# makefile (from 'Makefile', line 164)
+am__v_CC_1 = 
+# default
+.LOADED := 
+# makefile (from 'Makefile', line 316)
+LTLIBOBJS = 
+# makefile (from 'Makefile', line 357)
+abs_top_builddir = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 288)
+CPP = gcc -E
+# environment
+SSH_AGENT_PID = 2717
+# makefile (from 'Makefile', line 331)
+RANLIB = ranlib
+# environment
+PKG_CONFIG_PATH = :/home/cerkoc01/Workspace/sgxsdk/pkgconfig:/home/cerkoc01/Workspace/sgxsdk/pkgconfig
+# makefile (from 'Makefile', line 385)
+mandir = ${datarootdir}/man
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# makefile (from 'Makefile', line 167)
+AM_V_CCLD = $(am__v_CCLD_$(V))
+# makefile (from 'Makefile', line 429)
+sp_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib 
+# makefile (from 'Makefile', line 381)
+ 
+libdir = ${exec_prefix}/lib
+# environment
+GTK_MODULES = gail:atk-bridge
+# makefile (from 'Makefile', line 431)
+client_LDADD = -l$(SGX_URTS_LIB) -lsgx_ukey_exchange -lcrypto -l:libsgx_capable.a -lpthread -ldl
+# makefile (from 'Makefile', line 166)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+# environment
+MANPATH = :/opt/puppetlabs/puppet/share/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/cerkoc01
+# makefile (from 'Makefile', line 207)
+AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS cscope distdir distdir-am dist dist-all distcheck
+# makefile (from 'Makefile', line 380)
+install_sh = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/install-sh
+# environment
+LD_LIBRARY_PATH = /home/cerkoc01/Workspace/sgxsdk/sdk_libs:/home/cerkoc01/Workspace/sgxsdk/sdk_libs
+# makefile (from 'Makefile', line 101)
+mkinstalldirs = $(install_sh) -d
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# makefile (from 'Makefile', line 188)
+RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive
+# environment
+VSCODE_CODE_CACHE_PATH = /home/cerkoc01/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+# makefile (from 'Makefile', line 427)
+EXTRA_sp_DEPENDENCIES = Enclave.signed.so
+# environment
+LOGNAME = cerkoc01
+# makefile (from 'Makefile', line 398)
+top_build_prefix = 
+# makefile (from 'Makefile', line 278)
+AGENT_CURL_SRC = agent_curl.cpp
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'Makefile', line 72)
+am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+# makefile (from 'Makefile', line 409)
+AM_LDFLAGS = -L$(SGXSDK_LIBDIR)
+# makefile (from 'Makefile', line 92)
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+# makefile (from 'Makefile', line 367)
+build_alias = 
+# makefile (from 'Makefile', line 173)
+AM_V_CXX = $(am__v_CXX_$(V))
+# makefile (from 'Makefile', line 322)
+OPENSSL_LIBDIR = /usr/lib/ssl/lib
+# makefile (from 'Makefile', line 159)
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+# makefile (from 'Makefile', line 84)
+PRE_INSTALL = :
+# makefile (from 'Makefile', line 174)
+am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# makefile (from 'Makefile', line 360)
+ac_ct_CXX = g++
+# makefile (from 'Makefile', line 328)
+PACKAGE_URL = 
+# makefile (from 'Makefile', line 169)
+am__v_CCLD_0 = @echo "  CCLD    " $@;
+# makefile (from 'Makefile', line 114)
+client_DEPENDENCIES = 
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile', line 340)
+SGX_DEBUG_FLAGS = 
+# makefile (from 'Makefile', line 422)
+EXTRA_client_DEPENDENCIES = Enclave.signed.so
+# makefile (from 'Makefile', line 237)
+top_distdir = $(distdir)
+# makefile (from 'Makefile', line 384)
+localstatedir = ${prefix}/var
+# makefile (from 'Makefile', line 330)
+PATH_SEPARATOR = :
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 85)
+POST_INSTALL = :
+# environment
+COLORTERM = truecolor
+# makefile (from 'Makefile', line 71)
+am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 402)
+SGX_SIGN = $(SGXSDK_BINDIR)/sgx_sign
+# makefile (from 'Makefile', line 175)
+am__v_CXX_0 = @echo "  CXX     " $@;
+# makefile (from 'Makefile', line 86)
+NORMAL_UNINSTALL = :
+# makefile (from 'Makefile', line 230)
+DIST_SUBDIRS = $(SUBDIRS)
+# environment
+SHLVL = 1
+# makefile (from 'Makefile', line 435)
+sp_LDADD = -lcrypto -lcurl
+# makefile (from 'Makefile', line 285)
+CC = gcc
+# makefile (from 'Makefile', line 394)
+sharedstatedir = ${prefix}/com
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = cerkoc01
+# makefile (from 'Makefile', line 303)
+EGREP = /usr/bin/grep -E
+# makefile (from 'Makefile', line 276)
+distcleancheck_listfiles = find . -type f -print
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 395)
+srcdir = .
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 366)
+bindir = ${exec_prefix}/bin
+# makefile (from 'Makefile', line 133)
+AM_V_P = $(am__v_P_$(V))
+# makefile (from 'Makefile', line 170)
+am__v_CCLD_1 = 
+# makefile (from 'Makefile', line 102)
+CONFIG_HEADER = config.h
+# makefile (from 'Makefile', line 318)
+MKDIR_P = /usr/bin/mkdir -p
+# makefile (from 'Makefile', line 320)
+OPENSSL_CPPFLAGS = -I/usr/lib/ssl/include
+# makefile (from 'Makefile', line 335)
+SGXSDK_INCDIR = /home/cerkoc01/Workspace/sgxsdk/include
+# makefile (from 'Makefile', line 147)
+am__maybe_remake_depfiles = depfiles
+# makefile (from 'Makefile', line 130)
+sp_DEPENDENCIES = 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 423)
+BUILT_SOURCES = Enclave_u.c Enclave_u.h policy
+# makefile (from 'Makefile', line 392)
+runstatedir = ${localstatedir}/run
+# makefile (from 'Makefile', line 176)
+am__v_CXX_1 = 
+# makefile (from 'Makefile', line 428)
+mrsigner_SOURCES = mrsigner.cpp crypto.c hexutil.c
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 95)
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) $(ACLOCAL_M4)
+# environment
+OLDPWD = /home/cerkoc01/Workspace
+# makefile (from 'Makefile', line 327)
+PACKAGE_TARNAME = sgxautosample
+# makefile (from 'Makefile', line 180)
+AM_V_CXXLD = $(am__v_CXXLD_$(V))
+# makefile (from 'Makefile', line 97)
+DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure $(am__configure_deps) $(am__DIST_COMMON)
+# makefile (from 'Makefile', line 110)
+am_client_OBJECTS = client.$(OBJEXT) sgx_detect_linux.$(OBJEXT) sgx_stub.$(OBJEXT) quote_size.$(OBJEXT) $(am__objects_1)
+# default
+.VARIABLES := 
+# makefile (from 'Makefile', line 347)
+SGX_TLIB_CPPFLAGS = -I$(SGXSDK_INCDIR) -I$(SGXSDK_INCDIR)/tlibc
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_US:
+# makefile (from 'Makefile', line 81)
+INSTALL_HEADER = $(INSTALL_DATA)
+# environment
+VSCODE_IPC_HOOK = /run/user/54759/vscode-36daf44e-1.69.1-main.sock
+# makefile (from 'Makefile', line 279)
+AMTAR = $${TAR-tar}
+# makefile (from 'Makefile', line 76)
+pkglibexecdir = $(libexecdir)/sgxautosample
+# makefile (from 'Makefile', line 181)
+am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 351)
+SGX_URTS_LIB = sgx_urts
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 117)
+am_mrsigner_OBJECTS = mrsigner.$(OBJEXT) crypto.$(OBJEXT) hexutil.$(OBJEXT)
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 142)
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 346)
+SGX_TLIB_CFLAGS = -nostdinc -fvisibility=hidden -fpie -fstack-protector
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 295)
+CXXDEPMODE = depmode=gcc3
+# environment
+GDK_BACKEND = x11
+# makefile (from 'Makefile', line 244)
+am__post_remove_distdir = $(am__remove_distdir)
+# makefile (from 'Makefile', line 141)
+AM_V_at = $(am__v_at_$(V))
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 182)
+am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+# makefile (from 'Makefile', line 148)
+am__depfiles_remade = ./$(DEPDIR)/Enclave_u.Po ./$(DEPDIR)/agent_curl.Po ./$(DEPDIR)/agent_wget.Po ./$(DEPDIR)/base64.Po ./$(DEPDIR)/byteorder.Po ./$(DEPDIR)/client.Po ./$(DEPDIR)/common.Po ./$(DEPDIR)/crypto.Po ./$(DEPDIR)/enclave_verify.Po ./$(DEPDIR)/fileio.Po ./$(DEPDIR)/hexutil.Po ./$(DEPDIR)/iasrequest.Po ./$(DEPDIR)/logfile.Po ./$(DEPDIR)/mrsigner.Po ./$(DEPDIR)/msgio.Po ./$(DEPDIR)/quote_size.Po ./$(DEPDIR)/sgx_detect_linux.Po ./$(DEPDIR)/sgx_stub.Po ./$(DEPDIR)/sp.Po
+# makefile (from 'Makefile', line 292)
+CURL_LIBDIR = 
+# makefile (from 'Makefile', line 186)
+DIST_SOURCES = $(client_SOURCES) $(mrsigner_SOURCES) $(am__sp_SOURCES_DIST)
+# makefile (from 'Makefile', line 379)
+infodir = ${datarootdir}/info
+# makefile (from 'Makefile', line 291)
+CURL_LDFLAGS = 
+# makefile (from 'Makefile', line 353)
+STRIP = 
+ 
+# makefile (from 'Makefile', line 344)
+SGX_ENCLAVE_LDADD = -Wl,--no-undefined -Wl,--whole-archive -l$(SGX_TRTS_LIB) -Wl,--no-whole-archive -Wl,--start-group $(SGX_EXTRA_TLIBS) -lsgx_tstdc -lsgx_tcrypto -l$(SGX_TSERVICE_LIB) -Wl,--end-group -Wl,-Bstatic -Wl,-Bsymbolic -Wl,-pie,-eenclave_entry -Wl,--export-dynamic -Wl,--defsym,__ImageBase=0
+# environment
+QT_ACCESSIBILITY = 1
+# makefile (from 'Makefile', line 165)
+CCLD = $(CC)
+# makefile (from 'Makefile', line 143)
+am__v_at_0 = @
+# makefile (from 'Makefile', line 325)
+PACKAGE_NAME = sgxautosample
+# makefile (from 'Makefile', line 177)
+CXXLD = $(CXX)
+# makefile (from 'Makefile', line 361)
+am__include = include
+# makefile (from 'Makefile', line 336)
+SGXSDK_LIBDIR = /home/cerkoc01/Workspace/sgxsdk/lib64
+# makefile (from 'Makefile', line 324)
+PACKAGE_BUGREPORT = john.p.mechalas@intel.com
+# makefile (from 'Makefile', line 168)
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 348)
+SGX_TLIB_CXXFLAGS = -nostdinc++ -fvisibility=hidden -fpie -fstack-protector
+# makefile (from 'Makefile', line 127)
+am_sp_OBJECTS = sp.$(OBJEXT) agent_wget.$(OBJEXT) iasrequest.$(OBJEXT) enclave_verify.$(OBJEXT) $(am__objects_1) $(am__objects_2)
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 343)
+SGX_ENCLAVE_CXXFLAGS = -nostdinc++ -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector
+# makefile (from 'Makefile', line 105)
+am__installdirs = "$(DESTDIR)$(bindir)"
+# makefile (from 'Makefile', line 299)
+DEPDIR = .deps
+# makefile (from 'Makefile', line 362)
+am__leading_dot = .
+# makefile (from 'Makefile', line 399)
+top_builddir = .
+# makefile (from 'Makefile', line 214)
+am__uniquify_input = $(AWK) ' BEGIN { nonempty = 0; } { items[$$0] = 1; nonempty = 1; } END { if (nonempty) { for (i in items) print i; }; } '
+# makefile (from 'Makefile', line 401)
+SGX_EDGER8R = $(SGXSDK_BINDIR)/sgx_edger8r
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 178)
+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+# makefile (from 'Makefile', line 297)
+CYGPATH_W = echo
+# makefile (from 'Makefile', line 377)
+htmldir = ${docdir}
+# makefile (from 'Makefile', line 294)
+CXX = g++
+# makefile (from 'Makefile', line 280)
+AM_DEFAULT_VERBOSITY = 1
+# makefile (from 'Makefile', line 75)
+pkglibdir = $(libdir)/sgxautosample
+# makefile (from 'Makefile', line 90)
+am__append_1 = agent_curl.cpp
+# makefile (from 'Makefile', line 358)
+abs_top_srcdir = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 121)
+mrsigner_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(mrsigner_LDFLAGS) $(LDFLAGS) -o $@
+# makefile (from 'Makefile', line 355)
+abs_builddir = /home/cerkoc01/Workspace/careful-whisper-sgx
+# makefile (from 'Makefile', line 183)
+am__v_CXXLD_1 = 
+# makefile (from 'Makefile', line 196)
+am__can_run_installinfo = case $$AM_UPDATE_INFO_DIR in n|no|NO) false;; *) (install-info --version) >/dev/null 2>&1;; esac
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 302)
+ECHO_T = 
+# makefile (from 'Makefile', line 305)
+EXEEXT = 
+# makefile (from 'Makefile', line 144)
+am__v_at_1 = 
+# makefile (from 'Makefile', line 349)
+SGX_TRTS_LIB = sgx_trts
+# makefile (from 'Makefile', line 314)
+LIBS = 
+# makefile (from 'Makefile', line 359)
+ac_ct_CC = gcc
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2898dade_0532_4717_98fa_6087b411e6d3
+# makefile (from 'Makefile', line 406)
+AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -fno-builtin-memset -I/usr/lib/ssl/include $(am__empty)
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 418)
+client_SOURCES = client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c $(common)
+# environment
+GNOME_TERMINAL_SERVICE = :1.107
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 209)
+am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)config.h.in
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'Makefile', line 382)
+libexecdir = ${exec_prefix}/libexec
+# makefile (from 'Makefile', line 281)
+AUTOCONF = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing autoconf
+# environment
+WINDOWPATH = 2
+# makefile (from 'Makefile', line 376)
+host_alias = 
+# makefile (from 'Makefile', line 158)
+am__mv = mv -f
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 308)
+INSTALL_DATA = ${INSTALL} -m 644
+# makefile (from 'Makefile', line 371)
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
+# makefile (from 'Makefile', line 373)
+enclave_libdir = ${exec_prefix}/libexec
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 113)
+client_OBJECTS = $(am_client_OBJECTS) $(nodist_client_OBJECTS)
+# makefile (from 'Makefile', line 317)
+MAKEINFO = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing makeinfo
+# makefile (from 'Makefile', line 345)
+SGX_ENCLAVE_LDFLAGS = -nostdlib -nodefaultlibs -nostartfiles -L$(SGXSDK_LIBDIR)
+# makefile (from 'Makefile', line 236)
+distdir = $(PACKAGE)-$(VERSION)
+# makefile (from 'Makefile', line 171)
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+# makefile (from 'Makefile', line 73)
+pkgdatadir = $(datadir)/sgxautosample
+# makefile (from 'Makefile', line 410)
+SUBDIRS = Enclave 
+# makefile (from 'Makefile', line 323)
+PACKAGE = sgxautosample
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# makefile (from 'Makefile', line 228)
+CTAGS = ctags
+# makefile (from 'Makefile', line 369)
+datadir = ${datarootdir}
+# environment
+VSCODE_PID = 17583
+# makefile (from 'Makefile', line 119)
+mrsigner_OBJECTS = $(am_mrsigner_OBJECTS)
+# makefile (from 'Makefile', line 338)
+SGXSSL_INCDIR = /opt/intel/sgxssl/include
+# makefile (from 'Makefile', line 282)
+AUTOHEADER = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing autoheader
+# makefile (from 'Makefile', line 306)
+GREP = /usr/bin/grep
+# makefile (from 'Makefile', line 87)
+PRE_UNINSTALL = :
+# makefile (from 'Makefile', line 337)
+SGXSSL = /opt/intel/sgxssl
+# makefile (from 'Makefile', line 421)
+nodist_client_SOURCES = Enclave_u.c Enclave_u.h
+ 
+# makefile (from 'Makefile', line 107)
+am__objects_1 = byteorder.$(OBJEXT) common.$(OBJEXT) crypto.$(OBJEXT) hexutil.$(OBJEXT) fileio.$(OBJEXT) base64.$(OBJEXT) msgio.$(OBJEXT) logfile.$(OBJEXT)
+# makefile (from 'Makefile', line 238)
+am__remove_distdir = if test -d "$(distdir)"; then find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)" || { sleep 5 && rm -rf "$(distdir)"; }; else :; fi
+# makefile (from 'Makefile', line 271)
+GZIP_ENV = --best
+# variable set hash-table stats:
+# Load=363/1024=35%, Rehash=0, Collisions=184/688=27%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 64770, inode 19660841): 109 files, no impossibilities.
+
+# 109 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%_u.h %_u.c: %.edl
+#  recipe to execute (from 'Makefile', line 1084):
+	$(SGX_EDGER8R) --search-path $(SGXSDK_INCDIR) $(SGX_EDGER8R_FLAGS) --untrusted $<
+
+%.c:
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 584):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.obj: %.c
+#  recipe to execute (from 'Makefile', line 591):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.cpp:
+
+%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 598):
+	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.obj: %.cpp
+#  recipe to execute (from 'Makefile', line 605):
+	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.o:
+
+%.obj:
+
+# 9 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+distclean-compile:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 555):
+	-rm -f *.tab.c
+
+.deps/msgio.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.872621936
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+.deps/quote_size.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.876621944
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+cscopelist: cscopelist-recursive
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-tarZ: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 801):
+	@echo WARNING: "Support for distribution archives compressed with" \
+		       "legacy program 'compress' is deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z
+	$(am__post_remove_distdir)
+
+install-man:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+maintainer-clean: maintainer-clean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 1020):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+	-rm -rf $(top_srcdir)/autom4te.cache
+		-rm -f ./$(DEPDIR)/Enclave_u.Po
+	-rm -f ./$(DEPDIR)/agent_curl.Po
+	-rm -f ./$(DEPDIR)/agent_wget.Po
+	-rm -f ./$(DEPDIR)/base64.Po
+	-rm -f ./$(DEPDIR)/byteorder.Po
+	-rm -f ./$(DEPDIR)/client.Po
+	-rm -f ./$(DEPDIR)/common.Po
+ 
+	-rm -f ./$(DEPDIR)/crypto.Po
+	-rm -f ./$(DEPDIR)/enclave_verify.Po
+	-rm -f ./$(DEPDIR)/fileio.Po
+	-rm -f ./$(DEPDIR)/hexutil.Po
+	-rm -f ./$(DEPDIR)/iasrequest.Po
+	-rm -f ./$(DEPDIR)/logfile.Po
+	-rm -f ./$(DEPDIR)/mrsigner.Po
+	-rm -f ./$(DEPDIR)/msgio.Po
+	-rm -f ./$(DEPDIR)/quote_size.Po
+	-rm -f ./$(DEPDIR)/sgx_detect_linux.Po
+	-rm -f ./$(DEPDIR)/sgx_stub.Po
+	-rm -f ./$(DEPDIR)/sp.Po
+	-rm -f Makefile
+
+install-pdf: install-pdf-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+run-client: config.status run.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 495):
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+
+# Not a target:
+agent_curl.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GTAGS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 688):
+	here=`$(am__cd) $(top_builddir) && pwd` \
+	  && $(am__cd) $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) "$$here"
+
+# Not a target:
+common.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distdir-am: Makefile.am configure m4/sgx_init.m4 configure.ac aclocal.m4 Makefile.in config.h.in mrsigner.sh.in run.in build-aux/sgx_app.am compile depcomp install-sh missing client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c mrsigner.cpp crypto.c hexutil.c sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 721):
+	$(am__remove_distdir)
+	test -d "$(distdir)" || mkdir "$(distdir)"
+	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	list='$(DISTFILES)'; \
+	  dist_files=`for file in $$list; do echo $$file; done | \
+	  sed -e "s|^$$srcdirstrip/||;t" \
+	      -e "s|^$$topsrcdirstrip/|$(top_builddir)/|;t"`; \
+	case $$dist_files in \
+	  */*) $(MKDIR_P) `echo "$$dist_files" | \
+			   sed '/\//!d;s|^|$(distdir)/|;s,/[^/]*$$,,' | \
+			   sort -u` ;; \
+	esac; \
+	for file in $$dist_files; do \
+	  if test -f $$file || test -d $$file; then d=.; else d=$(srcdir); fi; \
+	  if test -d $$d/$$file; then \
+	    dir=`echo "/$$file" | sed -e 's,/[^/]*$$,,'`; \
+	    if test -d "$(distdir)/$$file"; then \
+	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	    fi; \
+	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
+	      cp -fpR $(srcdir)/$$file "$(distdir)$$dir" || exit 1; \
+	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	    fi; \
+	    cp -fpR $$d/$$file "$(distdir)$$dir" || exit 1; \
+	  else \
+	    test -f "$(distdir)/$$file" \
+	    || cp -p $$d/$$file "$(distdir)/$$file" \
+	    || exit 1; \
+	  fi; \
+	done
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    $(am__make_dryrun) \
+	      || test -d "$(distdir)/$$subdir" \
+	      || $(MKDIR_P) "$(distdir)/$$subdir" \
+	      || exit 1; \
+	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	    $(am__relativize); \
+	    new_distdir=$$reldir; \
+	    dir1=$$subdir; dir2="$(top_distdir)"; \
+	    $(am__relativize); \
+	    new_top_distdir=$$reldir; \
+	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	    ($(am__cd) $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$new_top_distdir" \
+	        distdir="$$new_distdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+		am__skip_mode_fix=: \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
+	-test -n "$(am__skip_mode_fix)" \
+	|| find "$(distdir)" -type d ! -perm -755 \
+		-exec chmod u+rwx,go+rx {} \; -o \
+	  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+	  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+	  ! -type d ! -perm -444 -exec $(install_sh) -c -m a+r {} {} \; \
+	|| chmod -R a+r "$(distdir)"
+
+# Not a target:
+quote_size.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+installdirs-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 914):
+	for dir in "$(DESTDIR)$(bindir)"; do \
+	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	done
+
+dvi-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+sgx_detect_linux.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-info-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+install-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 924):
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+.deps/sgx_stub.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.880621954
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+install-sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+m4/sgx_init.m4:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+cscopelist-am: client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c Enclave_u.c Enclave_u.h mrsigner.cpp crypto.c hexutil.c sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 700):
+	list='$(am__tagged_files)'; \
+	case "$(srcdir)" in \
+	  [\\/]* | ?:[\\/]*) sdir="$(srcdir)" ;; \
+	  *) sdir=$(subdir)/$(srcdir) ;; \
+	esac; \
+	for i in $$list; do \
+	  if test -f "$$i"; then \
+	    echo "$(subdir)/$$i"; \
+	  else \
+	    echo "$$sdir/$$i"; \
+	  fi; \
+	done >> $(top_builddir)/cscope.files
+
+pdf: pdf-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.cpp.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 605):
+	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+all: Enclave_u.c Enclave_u.h policy config.h
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 437):
+	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+
+# Not a target:
+iasrequest.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+client: client.o sgx_detect_linux.o sgx_stub.o quote_size.o byteorder.o common.o crypto.o hexutil.o fileio.o base64.o msgio.o logfile.o Enclave_u.o Enclave.signed.so
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 540):
+	@rm -f client$(EXEEXT)
+	$(AM_V_CXXLD)$(client_LINK) $(client_OBJECTS) $(client_LDADD) $(LIBS)
+
+install-pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installcheck: installcheck-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive CTAGS GTAGS TAGS all all-am am--depfiles am--refresh check check-am clean clean-binPROGRAMS clean-cscope clean-generic cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip distcheck distclean distclean-compile distclean-generic distclean-hdr distclean-tags distcleancheck distdir distuninstallcheck dvi dvi-am html html-am info info-am install install-am install-binPROGRAMS install-data install-data-am install-dvi install-dvi-am install-exec install-exec-am install-html install-html-am install-info install-info-am install-man install-pdf install-pdf-am install-ps install-ps-am install-strip installcheck installcheck-am installdirs installdirs-am maintainer-clean maintainer-clean-generic mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am uninstall-binPROGRAMS
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+logfile.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distcheck: dist
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 827):
+	case '$(DIST_ARCHIVES)' in \
+	*.tar.gz*) \
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).tar.gz | $(am__untar) ;;\
+	*.tar.bz2*) \
+	  bzip2 -dc $(distdir).tar.bz2 | $(am__untar) ;;\
+	*.tar.lz*) \
+	  lzip -dc $(distdir).tar.lz | $(am__untar) ;;\
+	*.tar.xz*) \
+	  xz -dc $(distdir).tar.xz | $(am__untar) ;;\
+	*.tar.Z*) \
+	  uncompress -c $(distdir).tar.Z | $(am__untar) ;;\
+	*.shar.gz*) \
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).shar.gz | unshar ;;\
+	*.zip*) \
+	  unzip $(distdir).zip ;;\
+	esac
+	chmod -R a-w $(distdir)
+	chmod u+w $(distdir)
+	mkdir $(distdir)/_build $(distdir)/_build/sub $(distdir)/_inst
+	chmod a-w $(distdir)
+	test -d $(distdir)/_build || exit 0; \
+	dc_install_base=`$(am__cd) $(distdir)/_inst && pwd | sed -e 's,^[^:\\/]:[\\/],/,'` \
+	  && dc_destdir="$${TMPDIR-/tmp}/am-dc-$$$$/" \
+	  && am__cwd=`pwd` \
+	  && $(am__cd) $(distdir)/_build/sub \
+	  && ../../configure \
+	    $(AM_DISTCHECK_CONFIGURE_FLAGS) \
+	    $(DISTCHECK_CONFIGURE_FLAGS) \
+	    --srcdir=../.. --prefix="$$dc_install_base" \
+	  && $(MAKE) $(AM_MAKEFLAGS) \
+	  && $(MAKE) $(AM_MAKEFLAGS) dvi \
+	  && $(MAKE) $(AM_MAKEFLAGS) check \
+	  && $(MAKE) $(AM_MAKEFLAGS) install \
+	  && $(MAKE) $(AM_MAKEFLAGS) installcheck \
+	  && $(MAKE) $(AM_MAKEFLAGS) uninstall \
+	  && $(MAKE) $(AM_MAKEFLAGS) distuninstallcheck_dir="$$dc_install_base" \
+	        distuninstallcheck \
+	  && chmod -R a-w "$$dc_install_base" \
+	  && ({ \
+	       (cd ../.. && umask 077 && mkdir "$$dc_destdir") \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" install \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" uninstall \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" \
+	            distuninstallcheck_dir="$$dc_destdir" distuninstallcheck; \
+	      } || { rm -rf "$$dc_destdir"; exit 1; }) \
+	  && rm -rf "$$dc_destdir" \
+	  && $(MAKE) $(AM_MAKEFLAGS) dist \
+	  && rm -rf $(DIST_ARCHIVES) \
+	  && $(MAKE) $(AM_MAKEFLAGS) distcleancheck \
+	  && cd "$$am__cwd" \
+	  || exit 1
+	$(am__post_remove_distdir)
+	@(echo "$(distdir) archives ready for distribution: "; \
+	  list='$(DIST_ARCHIVES)'; for i in $$list; do echo $$i; done) | \
+	  sed -e 1h -e 1s/./=/g -e 1p -e 1x -e '$$p' -e '$$x'
+
+distclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 943):
+	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+
+# Not a target:
+base64.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean-binPROGRAMS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 537):
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 940):
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+
+ 
+.PRECIOUS: Makefile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-exec: install-exec-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+configure.ac:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+hexutil.o: hexutil.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'hexutil'
+#  Last modified 2022-07-22 13:09:09.570676199
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 584):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+# Not a target:
+sp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all-am: Makefile client sp mrsigner config.h
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+sgx_stub.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+am--depfiles: .deps/Enclave_u.Po .deps/agent_curl.Po .deps/agent_wget.Po .deps/base64.Po .deps/byteorder.Po .deps/client.Po .deps/common.Po .deps/crypto.Po .deps/enclave_verify.Po .deps/fileio.Po .deps/hexutil.Po .deps/iasrequest.Po .deps/logfile.Po .deps/mrsigner.Po .deps/msgio.Po .deps/quote_size.Po .deps/sgx_detect_linux.Po .deps/sgx_stub.Po .deps/sp.Po
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ID: client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c Enclave_u.c Enclave_u.h mrsigner.cpp crypto.c hexutil.c sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp config.h.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 646):
+	$(am__define_uniq_tagged_files); mkid -fID $$unique
+
+distclean: distclean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 955):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+		-rm -f ./$(DEPDIR)/Enclave_u.Po
+	-rm -f ./$(DEPDIR)/agent_curl.Po
+	-rm -f ./$(DEPDIR)/agent_wget.Po
+	-rm -f ./$(DEPDIR)/base64.Po
+	-rm -f ./$(DEPDIR)/byteorder.Po
+	-rm -f ./$(DEPDIR)/client.Po
+	-rm -f ./$(DEPDIR)/common.Po
+	-rm -f ./$(DEPDIR)/crypto.Po
+	-rm -f ./$(DEPDIR)/enclave_verify.Po
+	-rm -f ./$(DEPDIR)/fileio.Po
+	-rm -f ./$(DEPDIR)/hexutil.Po
+	-rm -f ./$(DEPDIR)/iasrequest.Po
+	-rm -f ./$(DEPDIR)/logfile.Po
+	-rm -f ./$(DEPDIR)/mrsigner.Po
+	-rm -f ./$(DEPDIR)/msgio.Po
+	-rm -f ./$(DEPDIR)/quote_size.Po
+	-rm -f ./$(DEPDIR)/sgx_detect_linux.Po
+	-rm -f ./$(DEPDIR)/sgx_stub.Po
+	-rm -f ./$(DEPDIR)/sp.Po
+	-rm -f Makefile
+
+run-server: config.status run.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 493):
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+
+sp: sp.o agent_wget.o iasrequest.o enclave_verify.o byteorder.o common.o crypto.o hexutil.o fileio.o base64.o msgio.o logfile.o agent_curl.o Enclave.signed.so
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 548):
+	@rm -f sp$(EXEEXT)
+	$(AM_V_CXXLD)$(sp_LINK) $(sp_OBJECTS) $(sp_LDADD) $(LIBS)
+
+.deps/Enclave_u.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.836621852
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+mrsigner.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Enclave/Enclave.edl:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.387145526
+#  File has been updated.
+#  Successfully updated.
+
+ 
+Enclave_u.c: Enclave.edl
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Enclave'
+#  Also makes: Enclave_u.h
+#  Last modified 2022-07-22 13:09:09.266675488
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1084):
+	$(SGX_EDGER8R) --search-path $(SGXSDK_INCDIR) $(SGX_EDGER8R_FLAGS) --untrusted $<
+
+.SUFFIXES: .c .cpp .o .obj
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+tags: tags-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall: uninstall-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-exec-am: install-binPROGRAMS
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+info: info-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Makefile: Makefile.in config.status
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.800621768
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 457):
+	@case '$?' in \
+	  *config.status*) \
+	    echo ' $(SHELL) ./config.status'; \
+	    $(SHELL) ./config.status;; \
+	  *) \
+	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles)'; \
+	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles);; \
+	esac;
+
+# Not a target:
+agent_wget.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+client.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Enclave.signed.so: Enclave/Enclave.signed.so
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:09:09.87867692
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1090):
+	ln -s $?
+
+Makefile.in: Makefile.am build-aux/sgx_app.am m4/sgx_init.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:22:59.272618186
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 444):
+	@for dep in $?; do \
+	  case '$(am__configure_deps)' in \
+	    *$$dep*) \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
+	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
+		&& exit 0; \
+	      exit 1;; \
+	  esac; \
+	done; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile'; \
+	$(am__cd) $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign Makefile
+
+distclean-am: clean-am distclean-compile distclean-generic distclean-hdr distclean-tags
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/sgx_detect_linux.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.876621944
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+clean-cscope:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 695):
+	-rm -f cscope.files
+
+server: sp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+depcomp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+fileio.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+
+installcheck-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+configure: m4/sgx_init.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 12:53:33.052484537
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 471):
+	$(am__cd) $(srcdir) && $(AUTOCONF)
+
+.deps/client.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.84862188
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-data-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+tags-am: client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c Enclave_u.c Enclave_u.h mrsigner.cpp crypto.c hexutil.c sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 651):
+	set x; \
+	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	$(am__define_uniq_tagged_files); \
+	shift; \
+	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
+	  test -n "$$unique" || unique=$$empty_fix; \
+	  if test $$# -gt 0; then \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      "$$@" $$unique; \
+	  else \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      $$unique; \
+	  fi; \
+	fi
+
+dvi: dvi-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+byteorder.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+crypto.o: crypto.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'crypto'
+#  Last modified 2022-07-22 13:09:09.526676096
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 584):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+install-info: install-info-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-tags:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 714):
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+	-rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+
+# Not a target:
+Makefile.am:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.387145526
+#  File has been updated.
+#  Successfully updated.
+
+ 
+cscope: cscope.files
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 692):
+	test ! -s cscope.files \
+	  || $(CSCOPE) -b -q $(AM_CSCOPEFLAGS) $(CSCOPEFLAGS) -i cscope.files $(CSCOPE_ARGS)
+
+dist-bzip2: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 789):
+	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2
+	$(am__post_remove_distdir)
+
+clean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+Enclave_u.h: Enclave.edl
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Enclave'
+#  Also makes: Enclave_u.c
+#  Last modified 2022-07-22 13:09:09.266675488
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1084):
+	$(SGX_EDGER8R) --search-path $(SGXSDK_INCDIR) $(SGX_EDGER8R_FLAGS) --untrusted $<
+
+# Not a target:
+quote_size.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/byteorder.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.84862188
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+dist-shar: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 808):
+	@echo WARNING: "Support for shar distribution archives is" \
+	               "deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	shar $(distdir) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).shar.gz
+	$(am__post_remove_distdir)
+
+.deps/iasrequest.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.864621917
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+sgx_detect_linux.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/agent_curl.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.836621852
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+ctags-am: client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c Enclave_u.c Enclave_u.h mrsigner.cpp crypto.c hexutil.c sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c byteorder.c common.cpp crypto.c hexutil.c fileio.c base64.c msgio.cpp logfile.c agent_curl.cpp config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 682):
+	$(am__define_uniq_tagged_files); \
+	test -z "$(CTAGS_ARGS)$$unique" \
+	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+	     $$unique
+
+# Not a target:
+policy.in:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+cscope.files: clean-cscope cscopelist
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+policy: mrsigner policy.in Enclave.signed.so
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:09:09.886676939
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1098):
+	$(SGX_SIGN) dump -cssfile enclave_sigstruct_raw -dumpfile /dev/null -enclave Enclave.signed.so
+	sed -e "s^@MRSIGNER@^`./mrsigner.sh enclave_sigstruct_raw`^" policy.in > policy
+	rm -f enclave_sigstruct_raw
+
+ 
+html-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+mrsigner.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/sp.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.884621964
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist-gzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 785):
+	tardir=$(distdir) && $(am__tar) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).tar.gz
+	$(am__post_remove_distdir)
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+check-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+agent_curl.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 584):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+distclean-hdr:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 489):
+	-rm -f config.h stamp-h1
+
+install-binPROGRAMS: client sp mrsigner
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 497):
+	@$(NORMAL_INSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
+	fi; \
+	for p in $$list; do echo "$$p $$p"; done | \
+	sed 's/$(EXEEXT)$$//' | \
+	while read p p1; do if test -f $$p \
+	  ; then echo "$$p"; echo "$$p"; else :; fi; \
+	done | \
+	sed -e 'p;s,.*/,,;n;h' \
+	    -e 's|.*|.|' \
+	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/' | \
+	sed 'N;N;N;s,\n, ,g' | \
+	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1 } \
+	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+	    if ($$2 == $$4) files[d] = files[d] " " $$1; \
+	    else { print "f", $$3 "/" $$4, $$1; } } \
+	  END { for (d in files) print "f", d, files[d] }' | \
+	while read type dir files; do \
+	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+	    test -z "$$files" || { \
+	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
+	      $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
+	    } \
+	; done
+
+.NOEXPORT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+maintainer-clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 947):
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+
+# Not a target:
+enclave_verify.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ctags-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+hexutil.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+
+install-pdf-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+pdf-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+config.status: configure
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.72062158
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	$(SHELL) ./config.status --recheck
+
+.MAKE: all-recursive check-recursive cscopelist-recursive ctags-recursive dvi-recursive html-recursive info-recursive install-data-recursive install-dvi-recursive install-exec-recursive install-html-recursive install-info-recursive install-pdf-recursive install-ps-recursive install-recursive installcheck-recursive installdirs-recursive pdf-recursive ps-recursive tags-recursive uninstall-recursive mostlyclean-recursive clean-recursive distclean-recursive maintainer-clean-recursive all check install install-am install-strip
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+msgio.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+missing:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+aclocal.m4: m4/sgx_init.m4 configure.ac
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 12:53:32.348482888
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 473):
+	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+
+install-html-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+Enclave/Enclave.signed.so:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:09:09.87867692
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1093):
+	make -C Enclave
+
+# Not a target:
+compile:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/crypto.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.852621888
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+config.h: stamp-h1
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2022-07-22 13:08:56.77064624
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := config.h
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := stamp-h1
+# automatic
+# | := 
+# automatic
+# < := stamp-h1
+# automatic
+# ^ := stamp-h1
+# automatic
+# ? := stamp-h1
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  recipe to execute (from 'Makefile', line 477):
+	@test -f $@ || rm -f stamp-h1
+	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
+
+check-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+config.h.in: m4/sgx_init.m4 configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+ 
+#  Last modified 2022-07-22 13:09:10.010677229
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 484):
+	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+	rm -f stamp-h1
+	touch $@
+
+install-data: install-data-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-ps-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+iasrequest.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mostlyclean-compile:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 552):
+	-rm -f *.$(OBJEXT)
+
+uninstall-am: uninstall-binPROGRAMS
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+stamp-h1: config.h.in config.status
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.820621814
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 481):
+	@rm -f stamp-h1
+	cd $(top_builddir) && $(SHELL) ./config.status config.h
+
+install-data-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall-binPROGRAMS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 526):
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	files=`for p in $$list; do echo "$$p"; done | \
+	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
+	      -e 's/$$/$(EXEEXT)/' \
+	`; \
+	test -n "$$list" || exit 0; \
+	echo " ( cd '$(DESTDIR)$(bindir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(bindir)" && rm -f $$files
+
+am--refresh: Makefile
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 442):
+	@:
+
+install-dvi-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+common.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/logfile.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.868621925
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+client.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+run.in:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/agent_wget.Po:
+#  Implicit rule search has not been done.
+ 
+#  Last modified 2022-07-22 13:23:00.840621861
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 598):
+	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean: clean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installdirs-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+info-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+install-strip:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 928):
+	if test -z '$(STRIP)'; then \
+	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	      install; \
+	else \
+	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	    "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'" install; \
+	fi
+
+build-aux/sgx_app.am:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.387145526
+#  File has been updated.
+#  Successfully updated.
+
+install-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+ps-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+byteorder.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+installcheck-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+crypto.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 16:13:09.391145535
+#  File has been updated.
+#  Successfully updated.
+
+cscopelist-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+agent_wget.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 820):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+
+maintainer-clean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+ 
+.deps/common.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.852621888
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+.deps/mrsigner.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.868621925
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mostlyclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/fileio.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.864621917
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+sp.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+html: html-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+logfile.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/hexutil.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.864621917
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+base64.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-all:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 820):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+
+ctags: ctags-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+all-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+html-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist-lzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 793):
+	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz
+	$(am__post_remove_distdir)
+
+info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+msgio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mostlyclean: mostlyclean-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/enclave_verify.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.856621898
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+distcleancheck: distclean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 900):
+	@if test '$(srcdir)' = . ; then \
+	  echo "ERROR: distcleancheck can only run from a VPATH build" ; \
+	  exit 1 ; \
+ 
+	fi
+	@test `$(distcleancheck_listfiles) | wc -l` -eq 0 \
+	  || { echo "ERROR: files left in build directory after distclean:" ; \
+	       $(distcleancheck_listfiles) ; \
+	       exit 1; } >&2
+
+.deps/base64.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:23:00.84862188
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 578):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# Not a target:
+sgx_stub.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+enclave_verify.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distuninstallcheck:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 883):
+	@test -n '$(distuninstallcheck_dir)' || { \
+	  echo 'ERROR: trying to run $@ with an empty' \
+	       '$$(distuninstallcheck_dir)' >&2; \
+	  exit 1; \
+	}; \
+	$(am__cd) '$(distuninstallcheck_dir)' || { \
+	  echo 'ERROR: cannot chdir into $(distuninstallcheck_dir)' >&2; \
+	  exit 1; \
+	}; \
+	test `$(am__distuninstallcheck_listfiles) | wc -l` -eq 0 \
+	   || { echo "ERROR: files left after uninstall:" ; \
+	        if test -n "$(DESTDIR)"; then \
+	          echo "  (check DESTDIR support)"; \
+	        fi ; \
+	        $(distuninstallcheck_listfiles) ; \
+	        exit 1; } >&2
+
+install-html: install-html-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mrsigner.o: mrsigner.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'mrsigner'
+#  Last modified 2022-07-22 13:09:09.354675693
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 584):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+mrsigner: mrsigner.o crypto.o hexutil.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-22 13:09:09.618676312
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 544):
+	@rm -f mrsigner$(EXEEXT)
+	$(AM_V_CXXLD)$(mrsigner_LINK) $(mrsigner_OBJECTS) $(mrsigner_LDADD) $(LIBS)
+
+dist-zip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 815):
+	-rm -f $(distdir).zip
+	zip -rq $(distdir).zip $(distdir)
+	$(am__post_remove_distdir)
+
+check: Enclave_u.c Enclave_u.h policy
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 910):
+	$(MAKE) $(AM_MAKEFLAGS) check-recursive
+
+install-exec-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+.c.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 591):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+# Not a target:
+Enclave_u.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+install-ps: install-ps-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+TAGS: tags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installdirs: installdirs-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-dvi: install-dvi-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Enclave.edl: Enclave/Enclave.edl
+#  Implicit rule search has not been done.
+ 
+#  Last modified 2022-07-21 16:13:09.387145526
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 1087):
+	ln -s $?
+
+distdir: Enclave_u.c Enclave_u.h policy
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 718):
+	$(MAKE) $(AM_MAKEFLAGS) distdir-am
+
+install-html-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+CTAGS: ctags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+tags-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# Not a target:
+fileio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mrsigner.sh: config.status mrsigner.sh.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 491):
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+
+dist-xz: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 797):
+	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz
+	$(am__post_remove_distdir)
+
+ps: ps-recursive
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install: Enclave_u.c Enclave_u.h policy
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 918):
+	$(MAKE) $(AM_MAKEFLAGS) install-recursive
+
+# Not a target:
+mrsigner.sh.in:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mostlyclean-recursive:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 618):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+# files hash-table stats:
+# Load=215/1024=21%, Rehash=0, Collisions=149/778=19%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 270 / storage = 3261 B / avg = 12 B
+# current buf: size = 8162 B / used = 3261 B / count = 270 / avg = 12 B
+
+# strcache performance: lookups = 972 / hit rate = 72%
+# hash-table stats:
+# Load=270/8192=3%, Rehash=0, Collisions=30/972=3%
+# Finished Make data base on Fri Jul 22 13:23:01 2022
+
+ 
