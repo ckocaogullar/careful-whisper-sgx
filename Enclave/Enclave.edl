@@ -51,13 +51,15 @@ enclave {
 			sgx_ra_key_type_t type, [out] sgx_sha256_hash_t *hash);
 
 		public sgx_status_t enclave_ra_close(sgx_ra_context_t ctx);
-
+		public int dummy_prove();
+		public int dummy_verify(int proof);
 	};
 
 	untrusted {
 #ifndef _WIN32
 		include "config.h"
 #endif
+	void ocall_print_string([in, string] const char *str);
 	};
 };
 

@@ -26,6 +26,8 @@ in the License.
 #endif
 #include <sgx_tkey_exchange.h>
 #include <sgx_tcrypto.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 static const sgx_ec256_public_t def_service_public_key = {
     {
@@ -198,4 +200,28 @@ sgx_status_t enclave_ra_close(sgx_ra_context_t ctx)
         sgx_status_t ret;
         ret = sgx_ra_close(ctx);
         return ret;
+}
+
+void printf(const char *fmt, ...)
+{
+    char buf[BUFSIZ] = {'\0'};
+    va_list ap;
+    va_start(ap, fmt);
+    vsnprintf(buf, BUFSIZ, fmt, ap);
+    va_end(ap);
+    ocall_print_string(buf);
+}
+
+int dummy_prove(){
+	printf("Generating dummy proof for peer attestation.\n");
+	return 1997;
+
+}
+
+int dummy_verify(int proof){
+	if (proof == 1997){
+		printf("Dummy proof from the peer is VERIFIED.\n");
+	} else {
+		printf("COULD NOT verify the proof from the peer.\n");
+	}
 }
