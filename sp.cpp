@@ -612,6 +612,7 @@ int main(int argc, char *argv[])
 	/* Get our message IO object. */
 	
 	if ( flag_stdio ) {
+		printf("Yesssss\n");
 		msgio= new MsgIO();
 	} else {
 		try {

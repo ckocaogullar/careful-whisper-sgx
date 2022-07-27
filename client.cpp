@@ -104,6 +104,8 @@ sgx_status_t sgx_create_enclave_search(
 void usage();
 int do_quote(sgx_enclave_id_t eid, config_t *config);
 int do_attestation(sgx_enclave_id_t eid, config_t *config);
+void dummy_prover(sgx_enclave_id_t eid, config_t *config);
+void dummy_verifier(sgx_enclave_id_t eid, config_t *config);
 
 char debug = 0;
 char verbose = 0;
@@ -192,12 +194,12 @@ int main(int argc, char *argv[])
 			{"spid-file", required_argument, 0, 'S'},
 			{"linkable", no_argument, 0, 'l'},
 			{"pubkey", optional_argument, 0, 'p'},
-			{"pubkey-file", required_argument, 0, 'P'},
+			{"pubkey-file", required_argument, 0, 'f'},
 			{"quote", no_argument, 0, 'q'},
 			{"verbose", no_argument, 0, 'v'},
 			{"stdio", no_argument, 0, 'z'},
-			{"prover-peer", no_argument, 0, 'o'},
-			{"verifier-peer", no_argument, 0, 'V'} {0, 0, 0, 0}};
+			{"prover-peer", no_argument, 0, 'P'},
+			{"verifier-peer", no_argument, 0, 'V'}, {0, 0, 0, 0}};
 
 	/* Parse our options */
 
@@ -207,7 +209,7 @@ int main(int argc, char *argv[])
 		int opt_index = 0;
 		unsigned char keyin[64];
 
-		c = getopt_long(argc, argv, "N:P:S:dehlmn:p:qrs:vz", long_opt,
+		c = getopt_long(argc, argv, "N:PVS:dehlmn:p:qrs:vz", long_opt,
 						&opt_index);
 		if (c == -1)
 			break;
@@ -217,23 +219,25 @@ int main(int argc, char *argv[])
 		case 0:
 			break;
 		// Prover peer
-		case 'o':
-			prover_verifier_flag = 0;
-		// Verifier peer
-		case 'V';
-			prover_verifier_flag = 1;
-			case 'N':
-			if (!from_hexstring_file((unsigned char *)&config.nonce,
-									 optarg, 16))
-			{
-
-				fprintf(stderr, "nonce must be 32-byte hex string\n");
-				exit(1);
-			}
-			SET_OPT(config.flags, OPT_NONCE);
-
-			break;
 		case 'P':
+			prover_verifier_flag = 0;
+			break;
+		// Verifier peer
+		case 'V':
+			prover_verifier_flag = 1;
+			break;
+		case 'N':
+		if (!from_hexstring_file((unsigned char *)&config.nonce,
+									optarg, 16))
+		{
+
+			fprintf(stderr, "nonce must be 32-byte hex string\n");
+			exit(1);
+		}
+		SET_OPT(config.flags, OPT_NONCE);
+
+		break;
+		case 'f':
 			if (!key_load_file(&service_public_key, optarg, KEY_PUBLIC))
 			{
 				fprintf(stderr, "%s: ", optarg);
@@ -366,13 +370,13 @@ int main(int argc, char *argv[])
 		usage();
 	else if (prover_verifier_flag)
 	{
-		config.server = strdup("localhost:1997");
-		config.port = "1997"
+		config.server = strdup("localhost");
+		config.port = "7777";
 	}
 	else if (!prover_verifier_flag)
 	{
-		config.server = strdup("localhost:1995");
-		config.port = "1995"
+		config.server = strdup("localhost");
+		config.port = "7777";
 	}
 	else if (!flag_stdio && !argc)
 	{
@@ -465,9 +469,17 @@ int main(int argc, char *argv[])
 #endif
 
 	/* Are we attesting, or just spitting out a quote? */
-
-	if (config.mode == MODE_ATTEST)
+	if (!prover_verifier_flag){
+		printf("Calling hello prover function\n");
+		dummy_prover(eid, &config);
+	}
+	else if (prover_verifier_flag){
+		printf("Calling hello verifier function\n");
+		dummy_verifier(eid, &config);
+	}
+	else if (config.mode == MODE_ATTEST)
 	{
+		printf("Calling do_attestation.\n");
 		do_attestation(eid, &config);
 	}
 	else if (config.mode == MODE_EPID || config.mode == MODE_QUOTE)
@@ -485,47 +497,58 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-void hello_verifier(sgx_enclave_id_t eid, config_t *config)
+void dummy_verifier(sgx_enclave_id_t eid, config_t *config)
 {
+	int *proof;
+	int *verif_result;
+	MsgIO *msgio;
 	try
 	{
-		msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
+		msgio= new MsgIO(NULL, DEFAULT_PORT);
+		// msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
 	}
 	catch (...)
 	{
 		exit(1);
 	}
-	int msg = dummy_prove(eid);
-	msgio->send(&msg, sizeof(msg));
-}
-
-void hello_prover(sgx_enclave_id_t eid, config_t *config)
-{
-	try
-	{
-		msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
-	}
-	catch (...)
-	{
-		exit(1);
-	}
-	int *msg = NULL;
-	int rv = msgio->read((void **)&msg, NULL);
+	while ( msgio->server_loop() ) {
+	int rv = msgio->read((void **)&proof, NULL);
 	if (rv == 0)
 	{
-		enclave_ra_close(eid, &sgxrv, ra_ctx);
-		fprintf(stderr, "protocol error reading msg2\n");
+		fprintf(stderr, "protocol error reading dummy proof\n");
 		delete msgio;
 		exit(1);
 	}
 	else if (rv == -1)
 	{
-		enclave_ra_close(eid, &sgxrv, ra_ctx);
-		fprintf(stderr, "system error occurred while reading msg2\n");
+		fprintf(stderr, "system error occurred while reading dummy proof\n");
 		delete msgio;
 		exit(1);
 	}
-	dummy_verify(eid, msg);
+	printf("Receiving proof: %d\n", *proof);
+	dummy_verify(eid, verif_result, *proof);
+
+	disconnect:
+			msgio->disconnect();
+		}
+}
+
+void dummy_prover(sgx_enclave_id_t eid, config_t *config)
+{
+	int proof;
+	MsgIO *msgio;
+	try
+	{
+		msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
+	}
+	catch (...)
+	{
+		exit(1);
+	}
+	
+	dummy_prove(eid, &proof);
+	printf("Sending proof: %d\n", proof);
+	msgio->send(&proof, sizeof(proof));
 }
 
 int do_attestation(sgx_enclave_id_t eid, config_t *config)

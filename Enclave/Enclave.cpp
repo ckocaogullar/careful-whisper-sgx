@@ -219,6 +219,7 @@ int dummy_prove(){
 }
 
 int dummy_verify(int proof){
+	printf("Here is the proof: %d\n", proof);
 	if (proof == 1997){
 		printf("Dummy proof from the peer is VERIFIED.\n");
 	} else {

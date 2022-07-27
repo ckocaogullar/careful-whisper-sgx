@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Jul 22 13:23:01 2022
+# Make data base, printed on Wed Jul 27 10:33:13 2022
 
 # Variables
 
@@ -76,11 +77,10 @@ SHELL = /bin/bash
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
- 
 # makefile (from 'Makefile', line 370)
 datarootdir = ${prefix}/share
 # environment
-JOURNAL_STREAM = 8:77489
+JOURNAL_STREAM = 8:86085
 # makefile (from 'Makefile', line 287)
 CFLAGS = -g -O2
 # makefile (from 'Makefile', line 83)
@@ -158,7 +158,7 @@ AWK = gawk
 # makefile (from 'Makefile', line 364)
 am__tar = $${TAR-tar} chof - "$$tardir"
 # environment
-MANAGERPID = 2525
+MANAGERPID = 2807
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # makefile (from 'Makefile', line 290)
@@ -178,11 +178,11 @@ SGX_SDK = /home/cerkoc01/Workspace/sgxsdk
 # makefile (from 'Makefile', line 434)
 mrsigner_LDADD = -lcrypto
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_54759_IkpitR
+KRB5CCNAME = FILE:/tmp/krb5cc_54759_d8mqj8
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/cerkoc01/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/cerkoc01/Workspace/sgxsdk/bin:/home/cerkoc01/Workspace/sgxsdk/bin/x64:/home/cerkoc01/Workspace/sgxsdk/bin:/home/cerkoc01/Workspace/sgxsdk/bin/x64
+PATH = /home/cerkoc01/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin:/home/cerkoc01/Workspace/sgxsdk/bin:/home/cerkoc01/Workspace/sgxsdk/bin/x64
 # makefile (from 'Makefile', line 313)
 LIBOBJS = 
 # makefile (from 'Makefile', line 222)
@@ -208,7 +208,7 @@ localedir = ${datarootdir}/locale
 # makefile (from 'Makefile', line 309)
 INSTALL_PROGRAM = ${INSTALL}
 # environment
-SESSION_MANAGER = local/e127133:@/tmp/.ICE-unix/2757,unix/e127133:/tmp/.ICE-unix/2757
+SESSION_MANAGER = local/e127133:@/tmp/.ICE-unix/3075,unix/e127133:/tmp/.ICE-unix/3075
 # makefile (from 'Makefile', line 341)
 SGX_ENCLAVE_CFLAGS = -nostdinc -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector
 # makefile (from 'Makefile', line 315)
@@ -264,7 +264,7 @@ am__v_CC_0 = @echo "  CC      " $@;
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = c1b6d256d0e741fbb21764dc751be6ad
+INVOCATION_ID = ec1fee85f15c4fb8afb332fe4a64a5ec
 # makefile (from 'Makefile', line 312)
 LDFLAGS = 
 # makefile (from 'Makefile', line 145)
@@ -332,11 +332,11 @@ abs_top_builddir = /home/cerkoc01/Workspace/careful-whisper-sgx
 # makefile (from 'Makefile', line 288)
 CPP = gcc -E
 # environment
-SSH_AGENT_PID = 2717
+SSH_AGENT_PID = 3032
 # makefile (from 'Makefile', line 331)
 RANLIB = ranlib
 # environment
-PKG_CONFIG_PATH = :/home/cerkoc01/Workspace/sgxsdk/pkgconfig:/home/cerkoc01/Workspace/sgxsdk/pkgconfig
+PKG_CONFIG_PATH = :/home/cerkoc01/Workspace/sgxsdk/pkgconfig
 # makefile (from 'Makefile', line 385)
 mandir = ${datarootdir}/man
 # environment
@@ -346,7 +346,6 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 # makefile (from 'Makefile', line 429)
 sp_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib 
 # makefile (from 'Makefile', line 381)
- 
 libdir = ${exec_prefix}/lib
 # environment
 GTK_MODULES = gail:atk-bridge
@@ -362,10 +361,11 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 HOME = /home/cerkoc01
 # makefile (from 'Makefile', line 207)
 AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS cscope distdir distdir-am dist dist-all distcheck
+ 
 # makefile (from 'Makefile', line 380)
 install_sh = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/install-sh
 # environment
-LD_LIBRARY_PATH = /home/cerkoc01/Workspace/sgxsdk/sdk_libs:/home/cerkoc01/Workspace/sgxsdk/sdk_libs
+LD_LIBRARY_PATH = /home/cerkoc01/Workspace/sgxsdk/sdk_libs
 # makefile (from 'Makefile', line 101)
 mkinstalldirs = $(install_sh) -d
 # environment
@@ -509,7 +509,7 @@ MAKE_COMMAND := make
 # makefile (from 'Makefile', line 95)
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) $(ACLOCAL_M4)
 # environment
-OLDPWD = /home/cerkoc01/Workspace
+OLDPWD = /home/cerkoc01
 # makefile (from 'Makefile', line 327)
 PACKAGE_TARNAME = sgxautosample
 # makefile (from 'Makefile', line 180)
@@ -576,7 +576,6 @@ infodir = ${datarootdir}/info
 CURL_LDFLAGS = 
 # makefile (from 'Makefile', line 353)
 STRIP = 
- 
 # makefile (from 'Makefile', line 344)
 SGX_ENCLAVE_LDADD = -Wl,--no-undefined -Wl,--whole-archive -l$(SGX_TRTS_LIB) -Wl,--no-whole-archive -Wl,--start-group $(SGX_EXTRA_TLIBS) -lsgx_tstdc -lsgx_tcrypto -l$(SGX_TSERVICE_LIB) -Wl,--end-group -Wl,-Bstatic -Wl,-Bsymbolic -Wl,-pie,-eenclave_entry -Wl,--export-dynamic -Wl,--defsym,__ImageBase=0
 # environment
@@ -617,6 +616,7 @@ top_builddir = .
 am__uniquify_input = $(AWK) ' BEGIN { nonempty = 0; } { items[$$0] = 1; nonempty = 1; } END { if (nonempty) { for (i in items) print i; }; } '
 # makefile (from 'Makefile', line 401)
 SGX_EDGER8R = $(SGXSDK_BINDIR)/sgx_edger8r
+ 
 # automatic
 <F = $(notdir $<)
 # makefile (from 'Makefile', line 178)
@@ -658,7 +658,7 @@ LIBS =
 # makefile (from 'Makefile', line 359)
 ac_ct_CC = gcc
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2898dade_0532_4717_98fa_6087b411e6d3
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f842fb25_ce66_43d3_b780_6d83a61e75f1
 # makefile (from 'Makefile', line 406)
 AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -fno-builtin-memset -I/usr/lib/ssl/include $(am__empty)
 # automatic
@@ -666,7 +666,7 @@ AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -fno-builtin-memset -I/usr/lib/ssl/include $(am
 # makefile (from 'Makefile', line 418)
 client_SOURCES = client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c $(common)
 # environment
-GNOME_TERMINAL_SERVICE = :1.107
+GNOME_TERMINAL_SERVICE = :1.102
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 209)
@@ -718,7 +718,7 @@ CTAGS = ctags
 # makefile (from 'Makefile', line 369)
 datadir = ${datarootdir}
 # environment
-VSCODE_PID = 17583
+VSCODE_PID = 4717
 # makefile (from 'Makefile', line 119)
 mrsigner_OBJECTS = $(am_mrsigner_OBJECTS)
 # makefile (from 'Makefile', line 338)
@@ -733,7 +733,6 @@ PRE_UNINSTALL = :
 SGXSSL = /opt/intel/sgxssl
 # makefile (from 'Makefile', line 421)
 nodist_client_SOURCES = Enclave_u.c Enclave_u.h
- 
 # makefile (from 'Makefile', line 107)
 am__objects_1 = byteorder.$(OBJEXT) common.$(OBJEXT) crypto.$(OBJEXT) hexutil.$(OBJEXT) fileio.$(OBJEXT) base64.$(OBJEXT) msgio.$(OBJEXT) logfile.$(OBJEXT)
 # makefile (from 'Makefile', line 238)
@@ -741,7 +740,7 @@ am__remove_distdir = if test -d "$(distdir)"; then find "$(distdir)" -type d ! -
 # makefile (from 'Makefile', line 271)
 GZIP_ENV = --best
 # variable set hash-table stats:
-# Load=363/1024=35%, Rehash=0, Collisions=184/688=27%
+# Load=363/1024=35%, Rehash=0, Collisions=183/687=27%
 
 # Pattern-specific Variable Values
 
@@ -749,9 +748,9 @@ GZIP_ENV = --best
 
 # Directories
 
-# . (device 64770, inode 19660841): 109 files, no impossibilities.
+# . (device 64770, inode 19660841): 110 files, no impossibilities.
 
-# 109 files, no impossibilities in 1 directories.
+# 110 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -784,6 +783,7 @@ GZIP_ENV = --best
 	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
 
 %.o:
+ 
 
 %.obj:
 
@@ -801,7 +801,7 @@ distclean-compile:
 
 .deps/msgio.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.872621936
+#  Last modified 2022-07-27 10:33:13.058865718
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -810,7 +810,7 @@ distclean-compile:
 
 .deps/quote_size.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.876621944
+#  Last modified 2022-07-27 10:33:13.058865718
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -861,7 +861,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/byteorder.Po
 	-rm -f ./$(DEPDIR)/client.Po
 	-rm -f ./$(DEPDIR)/common.Po
- 
 	-rm -f ./$(DEPDIR)/crypto.Po
 	-rm -f ./$(DEPDIR)/enclave_verify.Po
 	-rm -f ./$(DEPDIR)/fileio.Po
@@ -916,6 +915,7 @@ distdir-am: Makefile.am configure m4/sgx_init.m4 configure.ac aclocal.m4 Makefil
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 721):
+ 
 	$(am__remove_distdir)
 	test -d "$(distdir)" || mkdir "$(distdir)"
 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
@@ -1078,7 +1078,7 @@ install-am: all-am
 
 .deps/sgx_stub.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.880621954
+#  Last modified 2022-07-27 10:33:13.066865736
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1093,7 +1093,6 @@ install-sh:
 
 m4/sgx_init.m4:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-07-21 16:13:09.391145535
 #  File has been updated.
 #  Successfully updated.
@@ -1139,7 +1138,7 @@ all: Enclave_u.c Enclave_u.h policy config.h
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 437):
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
@@ -1163,6 +1162,7 @@ client: client.o sgx_detect_linux.o sgx_stub.o quote_size.o byteorder.o common.o
 	@rm -f client$(EXEEXT)
 	$(AM_V_CXXLD)$(client_LINK) $(client_OBJECTS) $(client_LDADD) $(LIBS)
 
+ 
 install-pdf-am:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -1279,7 +1279,6 @@ clean-generic:
 #  recipe to execute (from 'Makefile', line 940):
 	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
- 
 .PRECIOUS: Makefile
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1300,7 +1299,7 @@ configure.ac:
 hexutil.o: hexutil.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'hexutil'
-#  Last modified 2022-07-22 13:09:09.570676199
+#  Last modified 2022-07-26 11:44:10.551443426
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 584):
@@ -1351,6 +1350,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/base64.Po
 	-rm -f ./$(DEPDIR)/byteorder.Po
 	-rm -f ./$(DEPDIR)/client.Po
+ 
 	-rm -f ./$(DEPDIR)/common.Po
 	-rm -f ./$(DEPDIR)/crypto.Po
 	-rm -f ./$(DEPDIR)/enclave_verify.Po
@@ -1383,7 +1383,7 @@ sp: sp.o agent_wget.o iasrequest.o enclave_verify.o byteorder.o common.o crypto.
 
 .deps/Enclave_u.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.836621852
+#  Last modified 2022-07-27 10:33:13.022865634
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1400,16 +1400,15 @@ mrsigner.c:
 # Not a target:
 Enclave/Enclave.edl:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 16:13:09.387145526
+#  Last modified 2022-07-26 15:41:13.785328016
 #  File has been updated.
 #  Successfully updated.
 
- 
 Enclave_u.c: Enclave.edl
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Enclave'
 #  Also makes: Enclave_u.h
-#  Last modified 2022-07-22 13:09:09.266675488
+#  Last modified 2022-07-26 15:55:41.791283108
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 1084):
@@ -1447,7 +1446,7 @@ info: info-recursive
 Makefile: Makefile.in config.status
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.800621768
+#  Last modified 2022-07-27 10:33:12.98286554
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 457):
@@ -1474,7 +1473,7 @@ client.o:
 
 Enclave.signed.so: Enclave/Enclave.signed.so
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:09:09.87867692
+#  Last modified 2022-07-26 19:05:31.508935818
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 1090):
@@ -1482,7 +1481,7 @@ Enclave.signed.so: Enclave/Enclave.signed.so
 
 Makefile.in: Makefile.am build-aux/sgx_app.am m4/sgx_init.m4 configure.ac aclocal.m4
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:22:59.272618186
+#  Last modified 2022-07-27 10:33:11.374861788
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 444):
@@ -1506,11 +1505,12 @@ distclean-am: clean-am distclean-compile distclean-generic distclean-hdr distcle
 
 .deps/sgx_detect_linux.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.876621944
+#  Last modified 2022-07-27 10:33:13.062865728
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
 	@$(MKDIR_P) $(@D)
+ 
 	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
 
 clean-cscope:
@@ -1536,7 +1536,6 @@ depcomp:
 fileio.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 installcheck-recursive:
@@ -1582,7 +1581,7 @@ configure: m4/sgx_init.m4 configure.ac aclocal.m4
 
 .deps/client.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.84862188
+#  Last modified 2022-07-27 10:33:13.034865662
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1676,7 +1675,7 @@ maintainer-clean-am: distclean-am maintainer-clean-generic
 crypto.o: crypto.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'crypto'
-#  Last modified 2022-07-22 13:09:09.526676096
+#  Last modified 2022-07-26 11:44:10.507443323
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 584):
@@ -1710,13 +1709,13 @@ Makefile.am:
 #  File has been updated.
 #  Successfully updated.
 
- 
 cscope: cscope.files
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 692):
+ 
 	test ! -s cscope.files \
 	  || $(CSCOPE) -b -q $(AM_CSCOPEFLAGS) $(CSCOPEFLAGS) -i cscope.files $(CSCOPE_ARGS)
 
@@ -1766,7 +1765,7 @@ Enclave_u.h: Enclave.edl
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Enclave'
 #  Also makes: Enclave_u.c
-#  Last modified 2022-07-22 13:09:09.266675488
+#  Last modified 2022-07-26 15:55:41.7872831
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 1084):
@@ -1780,7 +1779,7 @@ quote_size.c:
 
 .deps/byteorder.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.84862188
+#  Last modified 2022-07-27 10:33:13.030865652
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1801,7 +1800,7 @@ dist-shar: distdir
 
 .deps/iasrequest.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.864621917
+#  Last modified 2022-07-27 10:33:13.0508657
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1816,7 +1815,7 @@ sgx_detect_linux.c:
 
 .deps/agent_curl.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.836621852
+#  Last modified 2022-07-27 10:33:13.022865634
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -1848,15 +1847,34 @@ cscope.files: clean-cscope cscopelist
 
 policy: mrsigner policy.in Enclave.signed.so
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:09:09.886676939
+#  Implicit/static pattern stem: ''
+#  Last modified 2022-07-26 16:00:08.783884404
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := policy
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := mrsigner policy.in Enclave.signed.so
+# automatic
+# | := 
+# automatic
+# < := mrsigner
+# automatic
+# ^ := mrsigner policy.in Enclave.signed.so
+# automatic
+# ? := Enclave.signed.so
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
 #  recipe to execute (from 'Makefile', line 1098):
 	$(SGX_SIGN) dump -cssfile enclave_sigstruct_raw -dumpfile /dev/null -enclave Enclave.signed.so
+ 
 	sed -e "s^@MRSIGNER@^`./mrsigner.sh enclave_sigstruct_raw`^" policy.in > policy
 	rm -f enclave_sigstruct_raw
 
- 
 html-recursive:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -1904,7 +1922,7 @@ mrsigner.cpp:
 
 .deps/sp.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.884621964
+#  Last modified 2022-07-27 10:33:13.066865736
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2066,7 +2084,6 @@ hexutil.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 install-pdf-recursive:
 #  Phony target (prerequisite of .PHONY).
@@ -2102,6 +2119,7 @@ install-pdf-recursive:
 	fi; test -z "$$fail"
 
 pdf-recursive:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2136,7 +2154,7 @@ pdf-recursive:
 
 config.status: configure
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.72062158
+#  Last modified 2022-07-27 10:33:12.898865344
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 468):
@@ -2202,7 +2220,7 @@ install-html-recursive:
 
 Enclave/Enclave.signed.so:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:09:09.87867692
+#  Last modified 2022-07-26 19:05:31.508935818
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 1093):
@@ -2216,7 +2234,7 @@ compile:
 
 .deps/crypto.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.852621888
+#  Last modified 2022-07-27 10:33:13.038865672
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2231,28 +2249,8 @@ compile:
 
 config.h: stamp-h1
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  Last modified 2022-07-22 13:08:56.77064624
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := config.h
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := stamp-h1
-# automatic
-# | := 
-# automatic
-# < := stamp-h1
-# automatic
-# ^ := stamp-h1
-# automatic
-# ? := stamp-h1
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 477):
 	@test -f $@ || rm -f stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
@@ -2292,10 +2290,8 @@ check-recursive:
 
 config.h.in: m4/sgx_init.m4 configure.ac aclocal.m4
 #  Implicit rule search has not been done.
- 
-#  Last modified 2022-07-22 13:09:10.010677229
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 484):
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f stamp-h1
@@ -2362,14 +2358,14 @@ uninstall-am: uninstall-binPROGRAMS
 
 stamp-h1: config.h.in config.status
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.820621814
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 481):
 	@rm -f stamp-h1
 	cd $(top_builddir) && $(SHELL) ./config.status config.h
 
 install-data-am:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -2440,7 +2436,7 @@ common.o:
 
 .deps/logfile.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.868621925
+#  Last modified 2022-07-27 10:33:13.0508657
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2461,8 +2457,7 @@ run.in:
 
 .deps/agent_wget.Po:
 #  Implicit rule search has not been done.
- 
-#  Last modified 2022-07-22 13:23:00.840621861
+#  Last modified 2022-07-27 10:33:13.026865644
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2659,6 +2654,7 @@ installcheck-am:
 crypto.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-21 16:13:09.391145535
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -2743,10 +2739,9 @@ maintainer-clean-recursive:
 	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
 	fi; test -z "$$fail"
 
- 
 .deps/common.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.852621888
+#  Last modified 2022-07-27 10:33:13.034865662
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2755,7 +2750,7 @@ maintainer-clean-recursive:
 
 .deps/mrsigner.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.868621925
+#  Last modified 2022-07-27 10:33:13.054865708
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2781,7 +2776,7 @@ mostlyclean-generic:
 
 .deps/fileio.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.864621917
+#  Last modified 2022-07-27 10:33:13.04286568
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2841,7 +2836,7 @@ logfile.o:
 
 .deps/hexutil.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.864621917
+#  Last modified 2022-07-27 10:33:13.04686569
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2919,6 +2914,7 @@ dist-lzip: distdir
 
 info-am:
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -2937,7 +2933,7 @@ mostlyclean: mostlyclean-recursive
 
 .deps/enclave_verify.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.856621898
+#  Last modified 2022-07-27 10:33:13.04286568
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -2953,7 +2949,6 @@ distcleancheck: distclean
 	@if test '$(srcdir)' = . ; then \
 	  echo "ERROR: distcleancheck can only run from a VPATH build" ; \
 	  exit 1 ; \
- 
 	fi
 	@test `$(distcleancheck_listfiles) | wc -l` -eq 0 \
 	  || { echo "ERROR: files left in build directory after distclean:" ; \
@@ -2962,7 +2957,7 @@ distcleancheck: distclean
 
 .deps/base64.Po:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:23:00.84862188
+#  Last modified 2022-07-27 10:33:13.026865644
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 578):
@@ -3013,7 +3008,7 @@ install-html: install-html-recursive
 mrsigner.o: mrsigner.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'mrsigner'
-#  Last modified 2022-07-22 13:09:09.354675693
+#  Last modified 2022-07-26 11:44:10.327442903
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 584):
@@ -3022,7 +3017,7 @@ mrsigner.o: mrsigner.c
 
 mrsigner: mrsigner.o crypto.o hexutil.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-22 13:09:09.618676312
+#  Last modified 2022-07-26 11:44:10.603443548
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 544):
@@ -3142,6 +3137,7 @@ TAGS: tags
 installdirs: installdirs-recursive
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 
@@ -3153,8 +3149,7 @@ install-dvi: install-dvi-recursive
 
 Enclave.edl: Enclave/Enclave.edl
 #  Implicit rule search has not been done.
- 
-#  Last modified 2022-07-21 16:13:09.387145526
+#  Last modified 2022-07-26 15:41:13.785328016
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 1087):
@@ -3302,12 +3297,12 @@ mostlyclean-recursive:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 270 / storage = 3261 B / avg = 12 B
-# current buf: size = 8162 B / used = 3261 B / count = 270 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 271 / storage = 3268 B / avg = 12 B
+# current buf: size = 8162 B / used = 3268 B / count = 271 / avg = 12 B
 
-# strcache performance: lookups = 972 / hit rate = 72%
+# strcache performance: lookups = 973 / hit rate = 72%
 # hash-table stats:
-# Load=270/8192=3%, Rehash=0, Collisions=30/972=3%
-# Finished Make data base on Fri Jul 22 13:23:01 2022
+# Load=271/8192=3%, Rehash=0, Collisions=30/973=3%
+# Finished Make data base on Wed Jul 27 10:33:13 2022
 
  

@@ -61,6 +61,15 @@ typedef struct ms_enclave_ra_close_t {
 	sgx_ra_context_t ms_ctx;
 } ms_enclave_ra_close_t;
 
+typedef struct ms_dummy_prove_t {
+	int ms_retval;
+} ms_dummy_prove_t;
+
+typedef struct ms_dummy_verify_t {
+	int ms_retval;
+	int ms_proof;
+} ms_dummy_verify_t;
+
 typedef struct ms_sgx_ra_get_ga_t {
 	sgx_status_t ms_retval;
 	sgx_ra_context_t ms_context;
@@ -84,6 +93,10 @@ typedef struct ms_sgx_ra_get_msg3_trusted_t {
 	sgx_ra_msg3_t* ms_p_msg3;
 	uint32_t ms_msg3_size;
 } ms_sgx_ra_get_msg3_trusted_t;
+
+typedef struct ms_ocall_print_string_t {
+	const char* ms_str;
+} ms_ocall_print_string_t;
 
 static sgx_status_t SGX_CDECL sgx_get_report(void* pms)
 {
@@ -366,6 +379,50 @@ err:
 	return status;
 }
 
+static sgx_status_t SGX_CDECL sgx_dummy_prove(void* pms)
+{
+	CHECK_REF_POINTER(pms, sizeof(ms_dummy_prove_t));
+	//
+	// fence after pointer checks
+	//
+	sgx_lfence();
+	ms_dummy_prove_t* ms = SGX_CAST(ms_dummy_prove_t*, pms);
+	sgx_status_t status = SGX_SUCCESS;
+	int _in_retval;
+
+
+	_in_retval = dummy_prove();
+	if (MEMCPY_S(&ms->ms_retval, sizeof(ms->ms_retval), &_in_retval, sizeof(_in_retval))) {
+		status = SGX_ERROR_UNEXPECTED;
+		goto err;
+	}
+
+err:
+	return status;
+}
+
+static sgx_status_t SGX_CDECL sgx_dummy_verify(void* pms)
+{
+	CHECK_REF_POINTER(pms, sizeof(ms_dummy_verify_t));
+	//
+	// fence after pointer checks
+	//
+	sgx_lfence();
+	ms_dummy_verify_t* ms = SGX_CAST(ms_dummy_verify_t*, pms);
+	sgx_status_t status = SGX_SUCCESS;
+	int _in_retval;
+
+
+	_in_retval = dummy_verify(ms->ms_proof);
+	if (MEMCPY_S(&ms->ms_retval, sizeof(ms->ms_retval), &_in_retval, sizeof(_in_retval))) {
+		status = SGX_ERROR_UNEXPECTED;
+		goto err;
+	}
+
+err:
+	return status;
+}
+
 static sgx_status_t SGX_CDECL sgx_sgx_ra_get_ga(void* pms)
 {
 	CHECK_REF_POINTER(pms, sizeof(ms_sgx_ra_get_ga_t));
@@ -561,15 +618,17 @@ err:
 
 SGX_EXTERNC const struct {
 	size_t nr_ecall;
-	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[8];
+	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[10];
 } g_ecall_table = {
-	8,
+	10,
 	{
 		{(void*)(uintptr_t)sgx_get_report, 0, 0},
 		{(void*)(uintptr_t)sgx_enclave_ra_init, 0, 0},
 		{(void*)(uintptr_t)sgx_enclave_ra_init_def, 0, 0},
 		{(void*)(uintptr_t)sgx_enclave_ra_get_key_hash, 0, 0},
 		{(void*)(uintptr_t)sgx_enclave_ra_close, 0, 0},
+		{(void*)(uintptr_t)sgx_dummy_prove, 0, 0},
+		{(void*)(uintptr_t)sgx_dummy_verify, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_get_ga, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_proc_msg2_trusted, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_get_msg3_trusted, 0, 0},
@@ -578,8 +637,63 @@ SGX_EXTERNC const struct {
 
 SGX_EXTERNC const struct {
 	size_t nr_ocall;
+	uint8_t entry_table[1][10];
 } g_dyn_entry_table = {
-	0,
+	1,
+	{
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, },
+	}
 };
 
+
+sgx_status_t SGX_CDECL ocall_print_string(const char* str)
+{
+	sgx_status_t status = SGX_SUCCESS;
+	size_t _len_str = str ? strlen(str) + 1 : 0;
+
+	ms_ocall_print_string_t* ms = NULL;
+	size_t ocalloc_size = sizeof(ms_ocall_print_string_t);
+	void *__tmp = NULL;
+
+
+	CHECK_ENCLAVE_POINTER(str, _len_str);
+
+	if (ADD_ASSIGN_OVERFLOW(ocalloc_size, (str != NULL) ? _len_str : 0))
+		return SGX_ERROR_INVALID_PARAMETER;
+
+	__tmp = sgx_ocalloc(ocalloc_size);
+	if (__tmp == NULL) {
+		sgx_ocfree();
+		return SGX_ERROR_UNEXPECTED;
+	}
+	ms = (ms_ocall_print_string_t*)__tmp;
+	__tmp = (void *)((size_t)__tmp + sizeof(ms_ocall_print_string_t));
+	ocalloc_size -= sizeof(ms_ocall_print_string_t);
+
+	if (str != NULL) {
+		if (MEMCPY_S(&ms->ms_str, sizeof(const char*), &__tmp, sizeof(const char*))) {
+			sgx_ocfree();
+			return SGX_ERROR_UNEXPECTED;
+		}
+		if (_len_str % sizeof(*str) != 0) {
+			sgx_ocfree();
+			return SGX_ERROR_INVALID_PARAMETER;
+		}
+		if (MEMCPY_S(__tmp, ocalloc_size, str, _len_str)) {
+			sgx_ocfree();
+			return SGX_ERROR_UNEXPECTED;
+		}
+		__tmp = (void *)((size_t)__tmp + _len_str);
+		ocalloc_size -= _len_str;
+	} else {
+		ms->ms_str = NULL;
+	}
+
+	status = sgx_ocall(0, ms);
+
+	if (status == SGX_SUCCESS) {
+	}
+	sgx_ocfree();
+	return status;
+}
 

@@ -40,8 +40,6 @@ PATH: /snap/bin
 PATH: /opt/puppetlabs/bin
 PATH: /home/cerkoc01/Workspace/sgxsdk/bin
 PATH: /home/cerkoc01/Workspace/sgxsdk/bin/x64
-PATH: /home/cerkoc01/Workspace/sgxsdk/bin
-PATH: /home/cerkoc01/Workspace/sgxsdk/bin/x64
 
 
 ## ----------- ##
@@ -312,7 +310,7 @@ configure:5059: checking for openssl/pem.h
 configure:5059: result: yes
 configure:5074: checking for library containing ECDSA_SIG_set0
 configure:5105: gcc -o conftest -g -O2   -L/usr/lib/ssl/lib conftest.c  >&5
-/usr/local/bin/ld: /tmp/ccYFEmev.o: in function `main':
+/usr/local/bin/ld: /tmp/ccgd6QLO.o: in function `main':
 /home/cerkoc01/Workspace/careful-whisper-sgx/conftest.c:36: undefined reference to `ECDSA_SIG_set0'
 collect2: error: ld returned 1 exit status
 configure:5105: $? = 1
@@ -371,7 +369,7 @@ configure:5159: checking for curl/curl.h
 configure:5159: result: yes
 configure:5169: checking for library containing curl_easy_init
 configure:5200: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/local/bin/ld: /tmp/ccsmAeGd.o: in function `main':
+/usr/local/bin/ld: /tmp/ccif3eAD.o: in function `main':
 /home/cerkoc01/Workspace/careful-whisper-sgx/conftest.c:36: undefined reference to `curl_easy_init'
 collect2: error: ld returned 1 exit status
 configure:5200: $? = 1
