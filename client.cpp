@@ -104,8 +104,10 @@ sgx_status_t sgx_create_enclave_search(
 void usage();
 int do_quote(sgx_enclave_id_t eid, config_t *config);
 int do_attestation(sgx_enclave_id_t eid, config_t *config);
+int do_attestation_old(sgx_enclave_id_t eid, config_t *config);
 void dummy_prover(sgx_enclave_id_t eid, config_t *config);
 void dummy_verifier(sgx_enclave_id_t eid, config_t *config);
+int do_verification(sgx_enclave_id_t eid, config_t *config);
 
 char debug = 0;
 char verbose = 0;
@@ -199,7 +201,8 @@ int main(int argc, char *argv[])
 			{"verbose", no_argument, 0, 'v'},
 			{"stdio", no_argument, 0, 'z'},
 			{"prover-peer", no_argument, 0, 'P'},
-			{"verifier-peer", no_argument, 0, 'V'}, {0, 0, 0, 0}};
+			{"verifier-peer", no_argument, 0, 'V'},
+			{0, 0, 0, 0}};
 
 	/* Parse our options */
 
@@ -227,16 +230,16 @@ int main(int argc, char *argv[])
 			prover_verifier_flag = 1;
 			break;
 		case 'N':
-		if (!from_hexstring_file((unsigned char *)&config.nonce,
-									optarg, 16))
-		{
+			if (!from_hexstring_file((unsigned char *)&config.nonce,
+									 optarg, 16))
+			{
 
-			fprintf(stderr, "nonce must be 32-byte hex string\n");
-			exit(1);
-		}
-		SET_OPT(config.flags, OPT_NONCE);
+				fprintf(stderr, "nonce must be 32-byte hex string\n");
+				exit(1);
+			}
+			SET_OPT(config.flags, OPT_NONCE);
 
-		break;
+			break;
 		case 'f':
 			if (!key_load_file(&service_public_key, optarg, KEY_PUBLIC))
 			{
@@ -469,23 +472,25 @@ int main(int argc, char *argv[])
 #endif
 
 	/* Are we attesting, or just spitting out a quote? */
-	if (!prover_verifier_flag){
-		printf("Calling hello prover function\n");
-		dummy_prover(eid, &config);
-	}
-	else if (prover_verifier_flag){
-		printf("Calling hello verifier function\n");
-		dummy_verifier(eid, &config);
-	}
-	else if (config.mode == MODE_ATTEST)
+	if (!prover_verifier_flag)
 	{
-		printf("Calling do_attestation.\n");
+		printf("Calling hello prover function\n");
 		do_attestation(eid, &config);
 	}
-	else if (config.mode == MODE_EPID || config.mode == MODE_QUOTE)
+	else if (prover_verifier_flag)
 	{
-		do_quote(eid, &config);
+		printf("Calling hello verifier function\n");
+		do_verification(eid, &config);
 	}
+	// else if (config.mode == MODE_ATTEST)
+	// {
+	// 	printf("Calling do_attestation.\n");
+	// 	do_attestation(eid, &config);
+	// }
+	// else if (config.mode == MODE_EPID || config.mode == MODE_QUOTE)
+	// {
+	// 	do_quote(eid, &config);
+	// }
 	else
 	{
 		fprintf(stderr, "Unknown operation mode.\n");
@@ -504,33 +509,34 @@ void dummy_verifier(sgx_enclave_id_t eid, config_t *config)
 	MsgIO *msgio;
 	try
 	{
-		msgio= new MsgIO(NULL, DEFAULT_PORT);
+		msgio = new MsgIO(NULL, DEFAULT_PORT);
 		// msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
 	}
 	catch (...)
 	{
 		exit(1);
 	}
-	while ( msgio->server_loop() ) {
-	int rv = msgio->read((void **)&proof, NULL);
-	if (rv == 0)
+	while (msgio->server_loop())
 	{
-		fprintf(stderr, "protocol error reading dummy proof\n");
-		delete msgio;
-		exit(1);
-	}
-	else if (rv == -1)
-	{
-		fprintf(stderr, "system error occurred while reading dummy proof\n");
-		delete msgio;
-		exit(1);
-	}
-	printf("Receiving proof: %d\n", *proof);
-	dummy_verify(eid, verif_result, *proof);
+		int rv = msgio->read((void **)&proof, NULL);
+		if (rv == 0)
+		{
+			fprintf(stderr, "protocol error reading dummy proof\n");
+			delete msgio;
+			exit(1);
+		}
+		else if (rv == -1)
+		{
+			fprintf(stderr, "system error occurred while reading dummy proof\n");
+			delete msgio;
+			exit(1);
+		}
+		printf("Receiving proof: %d\n", *proof);
+		dummy_verify(eid, verif_result, *proof);
 
 	disconnect:
-			msgio->disconnect();
-		}
+		msgio->disconnect();
+	}
 }
 
 void dummy_prover(sgx_enclave_id_t eid, config_t *config)
@@ -545,13 +551,235 @@ void dummy_prover(sgx_enclave_id_t eid, config_t *config)
 	{
 		exit(1);
 	}
-	
+
 	dummy_prove(eid, &proof);
 	printf("Sending proof: %d\n", proof);
 	msgio->send(&proof, sizeof(proof));
 }
 
 int do_attestation(sgx_enclave_id_t eid, config_t *config)
+{
+	sgx_status_t status, sgxrv, pse_status;
+	sgx_ra_msg1_t msg1;
+	sgx_ra_msg2_t *msg2 = NULL;
+	sgx_ra_msg3_t *msg3 = NULL;
+	ra_msg4_t *msg4 = NULL;
+	uint32_t msg0_extended_epid_group_id = 0;
+	uint32_t msg3_sz;
+	uint32_t flags = config->flags;
+	sgx_ra_context_t ra_ctx = 0xdeadbeef;
+	int rv;
+	MsgIO *msgio;
+	size_t msg4sz = 0;
+	int enclaveTrusted = NotTrusted; // Not Trusted
+	int b_pse = OPT_ISSET(flags, OPT_PSE);
+
+	if (config->server == NULL)
+	{
+		msgio = new MsgIO();
+	}
+	else
+	{
+		try
+		{
+			msgio = new MsgIO(config->server, (config->port == NULL) ? DEFAULT_PORT : config->port);
+		}
+		catch (...)
+		{
+			exit(1);
+		}
+	}
+
+	/*
+	 * WARNING! Normally, the public key would be hardcoded into the
+	 * enclave, not passed in as a parameter. Hardcoding prevents
+	 * the enclave using an unauthorized key.
+	 *
+	 * This is diagnostic/test application, however, so we have
+	 * the flexibility of a dynamically assigned key.
+	 */
+
+	/* Executes an ECALL that runs sgx_ra_init() */
+
+	if (OPT_ISSET(flags, OPT_PUBKEY))
+	{
+		if (debug)
+			fprintf(stderr, "+++ using supplied public key\n");
+		status = enclave_ra_init(eid, &sgxrv, config->pubkey, b_pse,
+								 &ra_ctx, &pse_status);
+	}
+	else
+	{
+		if (debug)
+			fprintf(stderr, "+++ using default public key\n");
+		status = enclave_ra_init_def(eid, &sgxrv, b_pse, &ra_ctx,
+									 &pse_status);
+	}
+
+	/* Did the ECALL succeed? */
+	if (status != SGX_SUCCESS)
+	{
+		fprintf(stderr, "enclave_ra_init: %08x\n", status);
+		delete msgio;
+		return 1;
+	}
+
+#ifdef _WIN32
+	/* If we asked for a PSE session, did that succeed? */
+	if (b_pse)
+	{
+		if (pse_status != SGX_SUCCESS)
+		{
+			fprintf(stderr, "pse_session: %08x\n", pse_status);
+			delete msgio;
+			return 1;
+		}
+	}
+#endif
+
+	/* Did sgx_ra_init() succeed? */
+	if (sgxrv != SGX_SUCCESS)
+	{
+		fprintf(stderr, "sgx_ra_init: %08x\n", sgxrv);
+		delete msgio;
+		return 1;
+	}
+
+	/* Generate msg0 */
+
+	status = sgx_get_extended_epid_group_id(&msg0_extended_epid_group_id);
+	if (status != SGX_SUCCESS)
+	{
+		enclave_ra_close(eid, &sgxrv, ra_ctx);
+		fprintf(stderr, "sgx_get_extended_epid_group_id: %08x\n", status);
+		delete msgio;
+		return 1;
+	}
+	if (verbose)
+	{
+		dividerWithText(stderr, "Msg0 Details");
+		dividerWithText(fplog, "Msg0 Details");
+		fprintf(stderr, "Extended Epid Group ID: ");
+		fprintf(fplog, "Extended Epid Group ID: ");
+		print_hexstring(stderr, &msg0_extended_epid_group_id,
+						sizeof(uint32_t));
+		print_hexstring(fplog, &msg0_extended_epid_group_id,
+						sizeof(uint32_t));
+		fprintf(stderr, "\n");
+		fprintf(fplog, "\n");
+		divider(stderr);
+		divider(fplog);
+	}
+
+	/* Generate msg1 */
+
+	status = sgx_ra_get_msg1(ra_ctx, eid, sgx_ra_get_ga, &msg1);
+	if (status != SGX_SUCCESS)
+	{
+		enclave_ra_close(eid, &sgxrv, ra_ctx);
+		fprintf(stderr, "sgx_ra_get_msg1: %08x\n", status);
+		fprintf(fplog, "sgx_ra_get_msg1: %08x\n", status);
+		delete msgio;
+		return 1;
+	}
+
+	if (verbose)
+	{
+		dividerWithText(stderr, "Msg1 Details");
+		dividerWithText(fplog, "Msg1 Details");
+		fprintf(stderr, "msg1.g_a.gx = ");
+		fprintf(fplog, "msg1.g_a.gx = ");
+		print_hexstring(stderr, msg1.g_a.gx, 32);
+		print_hexstring(fplog, msg1.g_a.gx, 32);
+		fprintf(stderr, "\nmsg1.g_a.gy = ");
+		fprintf(fplog, "\nmsg1.g_a.gy = ");
+		print_hexstring(stderr, msg1.g_a.gy, 32);
+		print_hexstring(fplog, msg1.g_a.gy, 32);
+		fprintf(stderr, "\nmsg1.gid    = ");
+		fprintf(fplog, "\nmsg1.gid    = ");
+		print_hexstring(stderr, msg1.gid, 4);
+		print_hexstring(fplog, msg1.gid, 4);
+		fprintf(stderr, "\n");
+		fprintf(fplog, "\n");
+		divider(stderr);
+		divider(fplog);
+	}
+
+	/*
+	 * Send msg0 and msg1 concatenated together (msg0||msg1). We do
+	 * this for efficiency, to eliminate an additional round-trip
+	 * between client and server. The assumption here is that most
+	 * clients have the correct extended_epid_group_id so it's
+	 * a waste to send msg0 separately when the probability of a
+	 * rejection is astronomically small.
+	 *
+	 * If it /is/ rejected, then the client has only wasted a tiny
+	 * amount of time generating keys that won't be used.
+	 */
+
+	dividerWithText(fplog, "Msg0||Msg1 ==> SP");
+	fsend_msg_partial(fplog, &msg0_extended_epid_group_id,
+					  sizeof(msg0_extended_epid_group_id));
+	fsend_msg(fplog, &msg1, sizeof(msg1));
+	divider(fplog);
+
+	dividerWithText(stderr, "Copy/Paste Msg0||Msg1 Below to SP");
+	msgio->send_partial(&msg0_extended_epid_group_id,
+						sizeof(msg0_extended_epid_group_id));
+	msgio->send(&msg1, sizeof(msg1));
+	divider(stderr);
+
+	fprintf(stderr, "Waiting for msg2 here.\n");
+	return 1;
+}
+
+int do_verification(sgx_enclave_id_t eid, config_t *config)
+{
+	struct msg01_struct
+	{
+		uint32_t msg0_extended_epid_group_id;
+		sgx_ra_msg1_t msg1;
+	} *msg01;
+	int rv;
+	int *verif_result;
+	MsgIO *msgio;
+	try
+	{
+		msgio = new MsgIO(NULL, DEFAULT_PORT);
+	}
+	catch (...)
+	{
+		exit(1);
+	}
+
+	while (msgio->server_loop())
+	{
+		fprintf(stderr, "Waiting for msg0||msg1\n");
+
+		rv = msgio->read((void **)&msg01, NULL);
+		if (rv == -1)
+		{
+			eprintf("system error reading msg0||msg1\n");
+			return 0;
+		}
+		else if (rv == 0)
+		{
+			eprintf("protocol error reading msg0||msg1\n");
+			return 0;
+		}
+
+		if (verbose)
+		{
+			edividerWithText("Msg0 Details (from Client)");
+			eprintf("msg0.extended_epid_group_id = %u\n",
+					msg01->msg0_extended_epid_group_id);
+			edivider();
+		}
+		process_msg01(eid, verif_result, msg01->msg0_extended_epid_group_id, &msg01->msg1);
+	}
+}
+
+int do_attestation_old(sgx_enclave_id_t eid, config_t *config)
 {
 	sgx_status_t status, sgxrv, pse_status;
 	sgx_ra_msg1_t msg1;

@@ -74,7 +74,8 @@ client.o: client.cpp /usr/include/stdc-predef.h config.h Enclave_u.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
- /usr/include/c++/9/bits/std_abs.h sgx_stub.h \
+ /usr/include/c++/9/bits/std_abs.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h sgx_stub.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -195,18 +196,17 @@ client.o: client.cpp /usr/include/stdc-predef.h config.h Enclave_u.h \
  /usr/include/c++/9/bits/basic_string.tcc common.h protocol.h \
  /usr/include/inttypes.h \
  /home/cerkoc01/Workspace/sgxsdk/include/sgx_quote.h sgx_detect.h \
- hexutil.h fileio.h base64.h crypto.h \
- /home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h \
- /usr/include/openssl/pem.h /usr/include/openssl/x509.h \
- /usr/include/openssl/buffer.h /usr/include/openssl/buffererr.h \
- /usr/include/openssl/ec.h /usr/include/openssl/ecerr.h \
- /usr/include/openssl/rsa.h /usr/include/openssl/rsaerr.h \
- /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
- /usr/include/openssl/dherr.h /usr/include/openssl/dsaerr.h \
- /usr/include/openssl/sha.h /usr/include/openssl/x509err.h \
- /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
- /usr/include/openssl/pkcs7.h /usr/include/openssl/pkcs7err.h \
- /usr/include/openssl/pemerr.h msgio.h logfile.h quote_size.h
+ hexutil.h fileio.h base64.h crypto.h /usr/include/openssl/pem.h \
+ /usr/include/openssl/x509.h /usr/include/openssl/buffer.h \
+ /usr/include/openssl/buffererr.h /usr/include/openssl/ec.h \
+ /usr/include/openssl/ecerr.h /usr/include/openssl/rsa.h \
+ /usr/include/openssl/rsaerr.h /usr/include/openssl/dsa.h \
+ /usr/include/openssl/dh.h /usr/include/openssl/dherr.h \
+ /usr/include/openssl/dsaerr.h /usr/include/openssl/sha.h \
+ /usr/include/openssl/x509err.h /usr/include/openssl/x509_vfy.h \
+ /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+ /usr/include/openssl/pkcs7err.h /usr/include/openssl/pemerr.h msgio.h \
+ logfile.h quote_size.h
 
 /usr/include/stdc-predef.h:
 
@@ -381,6 +381,8 @@ Enclave_u.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/c++/9/bits/std_abs.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h:
 
 sgx_stub.h:
 
@@ -707,8 +709,6 @@ fileio.h:
 base64.h:
 
 crypto.h:
-
-/home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h:
 
 /usr/include/openssl/pem.h:
 

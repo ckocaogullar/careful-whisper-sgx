@@ -44,6 +44,12 @@ typedef struct ms_dummy_verify_t {
 	int ms_proof;
 } ms_dummy_verify_t;
 
+typedef struct ms_process_msg01_t {
+	int ms_retval;
+	uint32_t ms_msg0_extended_epid_group_id;
+	sgx_ra_msg1_t* ms_msg1;
+} ms_process_msg01_t;
+
 typedef struct ms_sgx_ra_get_ga_t {
 	sgx_status_t ms_retval;
 	sgx_ra_context_t ms_context;
@@ -167,13 +173,24 @@ sgx_status_t dummy_verify(sgx_enclave_id_t eid, int* retval, int proof)
 	return status;
 }
 
+sgx_status_t process_msg01(sgx_enclave_id_t eid, int* retval, uint32_t msg0_extended_epid_group_id, sgx_ra_msg1_t* msg1)
+{
+	sgx_status_t status;
+	ms_process_msg01_t ms;
+	ms.ms_msg0_extended_epid_group_id = msg0_extended_epid_group_id;
+	ms.ms_msg1 = msg1;
+	status = sgx_ecall(eid, 7, &ocall_table_Enclave, &ms);
+	if (status == SGX_SUCCESS && retval) *retval = ms.ms_retval;
+	return status;
+}
+
 sgx_status_t sgx_ra_get_ga(sgx_enclave_id_t eid, sgx_status_t* retval, sgx_ra_context_t context, sgx_ec256_public_t* g_a)
 {
 	sgx_status_t status;
 	ms_sgx_ra_get_ga_t ms;
 	ms.ms_context = context;
 	ms.ms_g_a = g_a;
-	status = sgx_ecall(eid, 7, &ocall_table_Enclave, &ms);
+	status = sgx_ecall(eid, 8, &ocall_table_Enclave, &ms);
 	if (status == SGX_SUCCESS && retval) *retval = ms.ms_retval;
 	return status;
 }
@@ -187,7 +204,7 @@ sgx_status_t sgx_ra_proc_msg2_trusted(sgx_enclave_id_t eid, sgx_status_t* retval
 	ms.ms_p_qe_target = p_qe_target;
 	ms.ms_p_report = p_report;
 	ms.ms_p_nonce = p_nonce;
-	status = sgx_ecall(eid, 8, &ocall_table_Enclave, &ms);
+	status = sgx_ecall(eid, 9, &ocall_table_Enclave, &ms);
 	if (status == SGX_SUCCESS && retval) *retval = ms.ms_retval;
 	return status;
 }
@@ -201,7 +218,7 @@ sgx_status_t sgx_ra_get_msg3_trusted(sgx_enclave_id_t eid, sgx_status_t* retval,
 	ms.ms_qe_report = qe_report;
 	ms.ms_p_msg3 = p_msg3;
 	ms.ms_msg3_size = msg3_size;
-	status = sgx_ecall(eid, 9, &ocall_table_Enclave, &ms);
+	status = sgx_ecall(eid, 10, &ocall_table_Enclave, &ms);
 	if (status == SGX_SUCCESS && retval) *retval = ms.ms_retval;
 	return status;
 }

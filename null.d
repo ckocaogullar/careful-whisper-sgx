@@ -1,1 +1,3 @@
-Enclave.o: /dev/null
+hexutil.o: /dev/null /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

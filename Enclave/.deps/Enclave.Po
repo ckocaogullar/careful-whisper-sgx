@@ -1,1 +1,91 @@
-# dummy
+Enclave.o: Enclave.cpp ../config.h Enclave_t.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdint.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/stdint.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/cdefs.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/_types.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/wchar.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/stddef.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_edger8r.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_defs.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_error.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_eid.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_trts.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_utils.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_attributes.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_key.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_report.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_report2.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_tkey_exchange.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_quote.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_ecp_types.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_tcrypto.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdlib.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h ../config.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/string.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/sgx_tcrypto.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdio.h \
+ /home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdarg.h
+
+../config.h:
+
+Enclave_t.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdint.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/stdint.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/cdefs.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/sys/_types.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/wchar.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/stddef.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_edger8r.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_defs.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_error.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_eid.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_trts.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_utils.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_attributes.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_key.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_report.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_report2.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_tkey_exchange.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_quote.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_ecp_types.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_tcrypto.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdlib.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_key_exchange.h:
+
+../config.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/string.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/sgx_tcrypto.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdio.h:
+
+/home/cerkoc01/Workspace/sgxsdk/include/tlibc/stdarg.h:

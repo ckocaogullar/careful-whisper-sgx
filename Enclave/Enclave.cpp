@@ -29,6 +29,9 @@ in the License.
 #include <stdio.h>
 #include <stdarg.h>
 
+// #include "hexutil.h"
+#include <sgx_key_exchange.h>
+
 static const sgx_ec256_public_t def_service_public_key = {
     {
         0x72, 0x12, 0x8a, 0x7a, 0x17, 0x52, 0x6e, 0xbf,
@@ -45,6 +48,8 @@ static const sgx_ec256_public_t def_service_public_key = {
 
 };
 
+
+	
 #define PSE_RETRIES	5	/* Arbitrary. Not too long, not too short. */
 
 /*----------------------------------------------------------------------
@@ -202,6 +207,7 @@ sgx_status_t enclave_ra_close(sgx_ra_context_t ctx)
         return ret;
 }
 
+// For printing stuff in the (untrusted) client
 void printf(const char *fmt, ...)
 {
     char buf[BUFSIZ] = {'\0'};
@@ -210,6 +216,39 @@ void printf(const char *fmt, ...)
     vsnprintf(buf, BUFSIZ, fmt, ap);
     va_end(ap);
     ocall_print_string(buf);
+}
+
+// Necessary for the hexstring function -- Taken from the hexutil library
+static char *_hex_buffer= NULL;
+static size_t _hex_buffer_size= 0;
+const char _hextable[]= "0123456789abcdef";
+
+const char *hexstring (const void *vsrc, size_t len)
+{
+	size_t i, bsz;
+	const unsigned char *src= (const unsigned char *) vsrc;
+	char *bp;
+
+	bsz= len*2+1;	/* Make room for NULL byte */
+	if ( bsz >= _hex_buffer_size ) {
+		/* Allocate in 1K increments. Make room for the NULL byte. */
+		size_t newsz= 1024*(bsz/1024) + ((bsz%1024) ? 1024 : 0);
+		_hex_buffer_size= newsz;
+		_hex_buffer= (char *) realloc(_hex_buffer, newsz);
+		if ( _hex_buffer == NULL ) {
+			return "(out of memory)";
+		}
+	}
+
+	for(i= 0, bp= _hex_buffer; i< len; ++i) {
+		*bp= _hextable[src[i]>>4];
+		++bp;
+		*bp= _hextable[src[i]&0xf];
+		++bp;
+	}
+	_hex_buffer[len*2]= 0;
+	
+	return (const char *) _hex_buffer;
 }
 
 int dummy_prove(){
@@ -226,3 +265,36 @@ int dummy_verify(int proof){
 		printf("COULD NOT verify the proof from the peer.\n");
 	}
 }
+
+int process_msg01 (uint32_t msg0_extended_epid_group_id, sgx_ra_msg1_t *msg1)
+{
+	printf("\nMsg0 Details (from Prover)\n");
+	printf("msg0.extended_epid_group_id = %u\n",
+			msg0_extended_epid_group_id);
+	printf("\n");
+	
+
+	/* According to the Intel SGX Developer Reference
+	 * "Currently, the only valid extended Intel(R) EPID group ID is zero. The
+	 * server should verify this value is zero. If the Intel(R) EPID group ID 
+	 * is not zero, the server aborts remote attestation"
+	 */
+
+	if ( msg0_extended_epid_group_id != 0 ) {
+		printf("msg0 Extended Epid Group ID is not zero.  Exiting.\n");
+		return 0;
+	}
+
+	// Pass msg1 back to the pointer in the caller func
+	// memcpy(msg1, &msg01->msg1, sizeof(sgx_ra_msg1_t));
+	
+	printf("\nMsg1 Details (from Prover)\n");
+	printf("msg1.g_a.gx = %s\n",
+		hexstring(&msg1->g_a.gx, sizeof(msg1->g_a.gx)));
+	printf("msg1.g_a.gy = %s\n",
+		hexstring(&msg1->g_a.gy, sizeof(msg1->g_a.gy)));
+	printf("msg1.gid    = %s\n",
+		hexstring( &msg1->gid, sizeof(msg1->gid)));
+	printf("\n");
+	return 1;
+	}

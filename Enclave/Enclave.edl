@@ -23,6 +23,7 @@ enclave {
 	include "sgx_trts.h"
 	include "sgx_utils.h"
 	include "sgx_tkey_exchange.h"
+	include "sgx_key_exchange.h"
 
 	from "sgx_tkey_exchange.edl" import *;
 
@@ -53,6 +54,7 @@ enclave {
 		public sgx_status_t enclave_ra_close(sgx_ra_context_t ctx);
 		public int dummy_prove();
 		public int dummy_verify(int proof);
+		public int process_msg01 (uint32_t msg0_extended_epid_group_id, [in] sgx_ra_msg1_t *msg1);
 	};
 
 	untrusted {

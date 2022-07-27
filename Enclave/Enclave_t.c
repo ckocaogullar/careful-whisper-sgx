@@ -70,6 +70,12 @@ typedef struct ms_dummy_verify_t {
 	int ms_proof;
 } ms_dummy_verify_t;
 
+typedef struct ms_process_msg01_t {
+	int ms_retval;
+	uint32_t ms_msg0_extended_epid_group_id;
+	sgx_ra_msg1_t* ms_msg1;
+} ms_process_msg01_t;
+
 typedef struct ms_sgx_ra_get_ga_t {
 	sgx_status_t ms_retval;
 	sgx_ra_context_t ms_context;
@@ -423,6 +429,51 @@ err:
 	return status;
 }
 
+static sgx_status_t SGX_CDECL sgx_process_msg01(void* pms)
+{
+	CHECK_REF_POINTER(pms, sizeof(ms_process_msg01_t));
+	//
+	// fence after pointer checks
+	//
+	sgx_lfence();
+	ms_process_msg01_t* ms = SGX_CAST(ms_process_msg01_t*, pms);
+	sgx_status_t status = SGX_SUCCESS;
+	sgx_ra_msg1_t* _tmp_msg1 = ms->ms_msg1;
+	size_t _len_msg1 = sizeof(sgx_ra_msg1_t);
+	sgx_ra_msg1_t* _in_msg1 = NULL;
+	int _in_retval;
+
+	CHECK_UNIQUE_POINTER(_tmp_msg1, _len_msg1);
+
+	//
+	// fence after pointer checks
+	//
+	sgx_lfence();
+
+	if (_tmp_msg1 != NULL && _len_msg1 != 0) {
+		_in_msg1 = (sgx_ra_msg1_t*)malloc(_len_msg1);
+		if (_in_msg1 == NULL) {
+			status = SGX_ERROR_OUT_OF_MEMORY;
+			goto err;
+		}
+
+		if (memcpy_s(_in_msg1, _len_msg1, _tmp_msg1, _len_msg1)) {
+			status = SGX_ERROR_UNEXPECTED;
+			goto err;
+		}
+
+	}
+	_in_retval = process_msg01(ms->ms_msg0_extended_epid_group_id, _in_msg1);
+	if (MEMCPY_S(&ms->ms_retval, sizeof(ms->ms_retval), &_in_retval, sizeof(_in_retval))) {
+		status = SGX_ERROR_UNEXPECTED;
+		goto err;
+	}
+
+err:
+	if (_in_msg1) free(_in_msg1);
+	return status;
+}
+
 static sgx_status_t SGX_CDECL sgx_sgx_ra_get_ga(void* pms)
 {
 	CHECK_REF_POINTER(pms, sizeof(ms_sgx_ra_get_ga_t));
@@ -618,9 +669,9 @@ err:
 
 SGX_EXTERNC const struct {
 	size_t nr_ecall;
-	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[10];
+	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[11];
 } g_ecall_table = {
-	10,
+	11,
 	{
 		{(void*)(uintptr_t)sgx_get_report, 0, 0},
 		{(void*)(uintptr_t)sgx_enclave_ra_init, 0, 0},
@@ -629,6 +680,7 @@ SGX_EXTERNC const struct {
 		{(void*)(uintptr_t)sgx_enclave_ra_close, 0, 0},
 		{(void*)(uintptr_t)sgx_dummy_prove, 0, 0},
 		{(void*)(uintptr_t)sgx_dummy_verify, 0, 0},
+		{(void*)(uintptr_t)sgx_process_msg01, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_get_ga, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_proc_msg2_trusted, 0, 0},
 		{(void*)(uintptr_t)sgx_sgx_ra_get_msg3_trusted, 0, 0},
@@ -637,11 +689,11 @@ SGX_EXTERNC const struct {
 
 SGX_EXTERNC const struct {
 	size_t nr_ocall;
-	uint8_t entry_table[1][10];
+	uint8_t entry_table[1][11];
 } g_dyn_entry_table = {
 	1,
 	{
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, },
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, },
 	}
 };
 
