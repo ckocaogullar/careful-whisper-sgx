@@ -29,8 +29,9 @@ in the License.
 #include <stdio.h>
 #include <stdarg.h>
 
-// #include "hexutil.h"
 #include <sgx_key_exchange.h>
+// Manually added the include path for crypto.h and its dependencies in Makefile. Modify AM_CPPFLAGS if you would like to direct it to another path.
+#include "crypto.h"
 
 static const sgx_ec256_public_t def_service_public_key = {
     {
@@ -266,6 +267,7 @@ int dummy_verify(int proof){
 	}
 }
 
+
 int process_msg01 (uint32_t msg0_extended_epid_group_id, sgx_ra_msg1_t *msg1)
 {
 	printf("\nMsg0 Details (from Prover)\n");
@@ -296,5 +298,45 @@ int process_msg01 (uint32_t msg0_extended_epid_group_id, sgx_ra_msg1_t *msg1)
 	printf("msg1.gid    = %s\n",
 		hexstring( &msg1->gid, sizeof(msg1->gid)));
 	printf("\n");
+
+	// /* Generate our session key */
+
+	// printf("+++ generating session key Gb\n");
+
+	// Gb= key_generate();
+	// if ( Gb == NULL ) {
+	// 	eprintf("Could not create a session key\n");
+	// 	free(msg01);
+	// 	return 0;
+	// }
+
+	// /*
+	//  * Derive the KDK from the key (Ga) in msg1 and our session key.
+	//  * An application would normally protect the KDK in memory to 
+	//  * prevent trivial inspection.
+	//  */
+
+	// printf("+++ deriving KDK\n");
+
+	// if ( ! derive_kdk(Gb, session->kdk, msg1->g_a, config) ) {
+	// 	printf("Could not derive the KDK\n");
+	// 	free(msg01);
+	// 	return 0;
+	// }
+
+	// printf("+++ KDK = %s\n", hexstring(session->kdk, 16));
+
+	// /*
+ 	//  * Derive the SMK from the KDK 
+	//  * SMK = AES_CMAC(KDK, 0x01 || "SMK" || 0x00 || 0x80 || 0x00) 
+	//  */
+
+	// printf("+++ deriving SMK\n");
+
+	// cmac128(session->kdk, (unsigned char *)("\x01SMK\x00\x80\x00"), 7,
+	// 	session->smk);
+
+	// printf("+++ SMK = %s\n", hexstring(session->smk, 16));
+
 	return 1;
 	}

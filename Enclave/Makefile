@@ -321,7 +321,7 @@ SGX_EDGER8R = $(SGXSDK_BINDIR)/sgx_edger8r
 SGX_SIGN = $(SGXSDK_BINDIR)/sgx_sign
 SGXSSL_BINDIR = @SGXSSL_BINDIR@
 AM_CFLAGS = -nostdinc -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector
-AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -I$(SGXSDK_INCDIR)/tlibc -I..
+AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -I$(SGXSDK_INCDIR)/tlibc -I/home/cerkoc01/Workspace/linux-sgx/external/dcap_source/QuoteVerification/sgxssl/openssl_source/openssl-1.1.1o/include -I..
 AM_CXXFLAGS = -nostdinc++ -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector -nostdinc -fvisibility=hidden -fpie -ffunction-sections -fdata-sections -fstack-protector
 AM_LDFLAGS = -nostdlib -nodefaultlibs -nostartfiles -L$(SGXSDK_LIBDIR)
 CLEANFILES = $(ENCLAVE).signed.so $(ENCLAVE)_t.c $(ENCLAVE)_t.h
@@ -394,7 +394,7 @@ install-libexecPROGRAMS: $(libexec_PROGRAMS)
 	while read type dir files; do \
 	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
 	    test -z "$$files" || { \
-	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(libexecdir)$$dir'"; \
+	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGR_ $$files '$(DESTDIR)$(libexecdir)$$dir'"; \
 	      $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(libexecdir)$$dir" || exit $$?; \
 	    } \
 	; done
