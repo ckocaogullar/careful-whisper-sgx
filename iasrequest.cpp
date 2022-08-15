@@ -399,6 +399,8 @@ ias_error_t IAS_Request::report(map<string,string> &payload, string &content,
 	if ( agent->request(url, body, response) ) {
 		if ( verbose ) {
 			edividerWithText("IAS report HTTP Response");
+			printf("%s", body);
+			edivider();
 			eputs(response.inspect().c_str());
 			edivider();
 		}

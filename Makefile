@@ -311,15 +311,15 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LDFLAGS = 
 LIBOBJS = 
-LIBS = 
+LIBS = -lcrypto 
 LIBS_HW_SIMU = 
 LTLIBOBJS = 
 MAKEINFO = ${SHELL} /home/cerkoc01/Workspace/careful-whisper-sgx/missing makeinfo
 MKDIR_P = /usr/bin/mkdir -p
 OBJEXT = o
-OPENSSL_CPPFLAGS = -I/usr/lib/ssl/include
-OPENSSL_LDFLAGS = -L/usr/lib/ssl/lib
-OPENSSL_LIBDIR = /usr/lib/ssl/lib
+OPENSSL_CPPFLAGS = 
+OPENSSL_LDFLAGS = 
+OPENSSL_LIBDIR = 
 PACKAGE = sgxautosample
 PACKAGE_BUGREPORT = john.p.mechalas@intel.com
 PACKAGE_NAME = sgxautosample
@@ -402,9 +402,9 @@ SGX_EDGER8R = $(SGXSDK_BINDIR)/sgx_edger8r
 SGX_SIGN = $(SGXSDK_BINDIR)/sgx_sign
 SGXSSL_BINDIR = @SGXSSL_BINDIR@
 #AM_CPPFLAGS = -fno-builtin-memset \
-#	-I/usr/lib/ssl/include $(am__empty)
+#	 $(am__empty)
 AM_CPPFLAGS = -I$(SGXSDK_INCDIR) -fno-builtin-memset \
-	-I/usr/lib/ssl/include $(am__empty)
+	 $(am__empty)
 #AM_LDFLAGS = 
 AM_LDFLAGS = -L$(SGXSDK_LIBDIR)
 SUBDIRS = Enclave 
@@ -421,13 +421,13 @@ client_SOURCES = client.cpp sgx_detect_linux.c sgx_stub.c quote_size.c \
 nodist_client_SOURCES = Enclave_u.c Enclave_u.h
 EXTRA_client_DEPENDENCIES = Enclave.signed.so
 BUILT_SOURCES = Enclave_u.c Enclave_u.h policy
-client_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib
+client_LDFLAGS = $(AM_LDFLAGS) 
 sp_SOURCES = sp.cpp agent_wget.cpp iasrequest.cpp enclave_verify.c \
 	$(common) $(am__append_1)
 EXTRA_sp_DEPENDENCIES = Enclave.signed.so
 mrsigner_SOURCES = mrsigner.cpp crypto.c hexutil.c
-sp_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib 
-mrsigner_LDFLAGS = $(AM_LDFLAGS) -L/usr/lib/ssl/lib
+sp_LDFLAGS = $(AM_LDFLAGS)  
+mrsigner_LDFLAGS = $(AM_LDFLAGS) 
 client_LDADD = -l$(SGX_URTS_LIB) -lsgx_ukey_exchange -lcrypto \
 	-l:libsgx_capable.a -lpthread -ldl
 

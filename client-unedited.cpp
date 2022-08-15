@@ -134,7 +134,7 @@ int main (int argc, char *argv[])
 {
 	config_t config;
 	sgx_launch_token_t token= { 0 };
-	sgx_status_t status;
+	x status;
 	sgx_enclave_id_t eid= 0;
 	int updated= 0;
 	int sgx_support;

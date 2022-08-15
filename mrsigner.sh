@@ -2,7 +2,7 @@
 
 # Where is OpenSSL 1.1.x?
 
-OPENSSL_LIBDIR=/usr/lib/ssl/lib
+OPENSSL_LIBDIR=
 if [ "$OPENSSL_LIBDIR" != "" ]
 then
         if [ "$LD_LIBRARY_PATH" = "" ]
